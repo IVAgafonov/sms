@@ -1,0 +1,47 @@
+<h1><?php echo $this->translate('User list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+</div>
+<?php if (isset($this->filterForm)): ?>
+<div class="filterform">
+        <?php $this->filterForm->prepare(); ?>
+        <?php echo $this->form()->openTag($this->filterForm); ?>
+
+        <?php echo $this->formRow($this->filterForm->get('Filter')->get('filter')); ?>
+        <?php echo $this->formRow($this->filterForm->get('submit')); ?>
+
+        <?php echo $this->form()->closeTag($this->filterForm); ?>
+</div>
+<?php endif ?>
+<div class="itemlist">
+    <?php if (!$this->userList): ?>
+        <h2><?php echo $this->translate('User list is empty'); ?></h2>
+    <?php else: ?>
+        <?php foreach ($this->userList as $user): ?>
+    <div class="listsitem">
+        <span class="itemname ready">
+            <?php echo $user->getEmail(); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <p><span class="edit"></span>
+                    <a href="<?php echo $this->url('sms-admin', array('action'=>'edit','id'=> $user->getId())); ?>">
+                        <?php echo $this->translate('edit user'); ?>
+                    </a>
+                </p>
+                <p><span class="edit"></span>
+                    <a href="<?php echo $this->url('sms-admin', array('action'=>'sendlist','id'=> $user->getId())); ?>">
+                        <?php echo $this->translate('send list'); ?>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationUserFilteredHelper($userList, $page, $filter,'/service/admin/index', 10); ?>
+        </div>
+    <?php endif ?>
+</div>

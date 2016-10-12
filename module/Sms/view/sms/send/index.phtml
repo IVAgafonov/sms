@@ -1,0 +1,94 @@
+<h1><?php echo $this->translate('Delivery list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-send', array('action'=>'add'));?>">
+        <span class='add icon'>+</span> <?php echo $this->translate('new delivery');?>
+    </a>
+</div>
+<div class="itemlist">
+    <?php if (!$this->sendList): ?>
+        <h2><?php echo $this->translate('Send list is empty'); ?></h2>
+    <?php else: ?>
+    <?php foreach ($this->sendList as $send): ?>
+    <div class="listsitem">
+        <a href="/"  onclick="return false;" title="<?php echo $this->translate("send"); ?>" class="send<?php echo $send->getStatus(); ?>">
+            <div class="statusdesc">
+                <div class="arr"></div>
+                <div class="desc">
+                    <?php 
+                        switch($send->getStatus()) {
+                            case 1:
+                                echo $this->translate("Wait");
+                                break;
+                            case 2:
+                                echo $this->translate("Prepair");
+                                break;
+                            case 3:
+                                echo $this->translate("Sending");
+                                break;
+                            case 4:
+                                echo $this->translate("Suspended");
+                                break;
+                            case 5:
+                                echo $this->translate("Complete");
+                                break;
+                            case 6:
+                                echo $this->translate("Error");
+                                break;
+                            default: $this->translate("Wait");
+                        }
+                    ?></div>
+            </div>
+        </a>
+        <span class="itemname <?php echo $send->getStatus() == 1 ? "ready" : "busy"; ?>">
+            <?php echo $send->getBaseName(); ?> - 
+            <?php echo " ".$send->getMessageTitle(); ?> : 
+            <?php echo date_format($send->getStartTime(), 'd.m.y H:i'); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <?php if ($send->getStatus() > 2): ?>
+                <ul>
+                    <li>
+                        <p class="impdtitle"><?php echo $this->translate("Send date"); ?></p>
+                        <p class="impdvalue"><?php echo $send->getStartTime()->format('d-m-Y H:i'); ?></p>
+                    </li>
+                    <li>
+                        <p class="impdtitle"><?php echo $this->translate("Sended messages"); ?></p>
+                        <p class="impdvalue"><?php echo $send->getSended(); ?></p>
+                    </li> 
+                </ul>
+                <?php endif ?>
+                <?php if ($send->getStatus() == 1): ?>
+                <p><span class="edit"></span>
+                    <a href="<?php echo $this->url('sms-send', array('action'=>'edit','id'=> $send->getId())); ?>">
+                        <?php echo $this->translate('edit'); ?>
+                    </a>
+                </p>
+                <?php endif ?>
+                <?php if (($send->getStatus() == 1) || ($send->getStatus() == 5)): ?>
+                <p><span class="delete"></span>
+                    <a href="<?php echo $this->url('sms-send', array('action'=>'delete','id'=> $send->getId())); ?>">
+                        <?php echo $this->translate('delete'); ?>
+                    </a>
+                </p>                   
+               <?php endif ?>
+               <?php if ($send->getStatus() == 2): ?>
+                <p><span class="numbers"></span>
+                    <a href="#" onclick="return false;">
+                        <?php echo $this->translate('prepare to send'); ?>
+                    </a>
+                </p>                
+               <?php endif ?>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationHelper($sendList, $page, '/service/send', 10); ?>
+        </div>
+    <?php endif ?>
+</div>
+

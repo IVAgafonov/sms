@@ -1,0 +1,51 @@
+<?php echo $this->doctype();?>
+<?php if (!isset($user)) $user = new \Sms\Entity\User(); ?>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('SMS service'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0, user-scalable=no')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+        <!-- styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        //->prependStylesheet($this->basePath('css/style.css'))
+                        //->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                        //->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+                        ->prependStylesheet($this->basePath('css/login.css'))
+                        ->prependStylesheet($this->basePath('css/forms.css'))
+                        ->prependStylesheet($this->basePath('css/template.css')) ?>
+        <!-- Scripts -->
+    </head>
+    <body>
+        <div class="lpmain">
+                <div class="loginhead">
+                    <h1>
+                        <a href="/">
+                            <?php echo $this->translate('SMS service'); ?>
+                        </a>
+                    </h1>
+                    <div class="lang">
+                    <a href="/" onclick="return false;" class="flag" style="background-image: url('/img/langs/<?php echo $this->currentLang; ?>.png');"></a>
+                        <div class="langs">
+                            <?php foreach ($this->langs as $lang): ?>
+                                <?php if ($lang[0] != $this->currentLang): ?>
+                                    <div class="langitem">
+                                        <a href="<?php echo $this->serverUrl(true).'?lang='.$lang[0]; ?>" ><span style="background-image: url('/img/langs/<?php echo $lang[0]; ?>.png')"></span> 
+                                            <?php echo $this->translate($lang[1]); ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+                </div>
+            <div class="lform">
+                <?php echo $this->content; ?>
+            </div>
+        </div>
+    </body>
+</html>
+

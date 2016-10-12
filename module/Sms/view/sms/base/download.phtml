@@ -1,0 +1,42 @@
+<h1><?php echo $this->translate('Download list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-base', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+<div class="itemlist">
+    <?php if (isset($emptyMessage)): ?>
+        <h2><?php echo $this->translate($emptyMessage); ?></h2>
+    <?php else: ?>
+    <?php foreach ($this->downloadlList as $download): ?>
+    <div class="listsitem">
+        <a href="/" onclick="return false;" title="<?php echo $this->translate("Ready to download"); ?>" 
+            class="ready">
+            <div class="statusdesc">
+                <div class="arr"></div>
+                <div class="desc"><?php echo $this->translate("Ready to download"); ?></div>
+            </div>
+        </a>
+        <span class="itemname <?php echo $base->getStatus()->getId() == 1 ? "ready" : "busy"; ?>">
+            <?php echo $download->getBaseName(); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <p><span class="download"></span>
+                    <a href="<?php echo $this->url('sms-base', array('action'=>'export','id'=> $download->getId())); ?>">
+                        <?php echo $this->translate('download'); ?>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationHelper($baseList, $page, '/service/base', 10); ?>
+        </div>
+    <?php endif ?>
+</div>
+

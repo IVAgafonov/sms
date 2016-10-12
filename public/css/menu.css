@@ -1,0 +1,139 @@
+/*
+@Copyright (C) 2016 Igor Agafonov
+@licenseGPL
+*/
+
+header > .main > .nav > ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+header > .main > .nav > ul > li {
+    display: inline-block;
+    padding: 0px 0px 0px 20px;
+}
+
+header > .main > .nav > ul > li > a {
+    line-height: 95px;
+    height: 95px;
+    display: inline-block;
+    text-decoration: none;
+    color: #272727;
+    font-size: 16pt;
+    border-bottom: 0px solid #079478;
+    transition: all 0.1s ease 0.1s;
+}
+
+header > .main > .nav > ul > li > a:hover {
+    border-bottom: 5px solid #079478;   
+}
+
+header > .main > .nav > ul > li.active > a {
+    border-bottom: 5px solid #1e75ce;
+}
+
+.mob-nav {
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.mob-nav > li {
+    
+}
+
+.mob-nav > li > a {
+    display: block;
+    padding: 10px 10px;
+    background: #d1d6d6;
+    text-decoration: none;
+    color: #27272d;
+    border-bottom: 1px solid #e7ecec;
+}
+
+.mob-nav > li > a:hover {
+    background: #e0e4e4;
+}
+
+.mob-nav > li.active > a {
+    background: #b6bbbb;
+}
+
+.mob-nav > li.active > a > span {
+    background-image: url('/img/bar-menu.png');
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: right;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+}
+
+@media  (max-width: 540px) {
+    .mmenu {
+        display: block;
+        float: right;
+        height: 30px;
+        margin: 10px 0px;   
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 1000px) {
+    .mmenu {
+        display: block;
+        float: right;
+        height: 50px;
+        margin: 10px 0px;
+    }
+}
+
+@media  (max-width: 540px) {
+    .mmenu > a {
+        background: #079478;
+        text-decoration: none;
+        color: #e7ecec;
+        line-height: 30px;
+        height: 30px;
+        display: block;
+        padding: 0px 10px;    
+    }
+    
+    .mmenu > a > span {
+        background-image: url('/img/bar-menu.png');
+        display: block;
+        width: 30px;
+        height: 30px;
+        float: right;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: 100% 50%;
+    }
+}
+
+
+
+@media  (min-width: 541px) and (max-width: 1000px) {
+    .mmenu > a {
+        background: #079478;
+        text-decoration: none;
+        color: #e7ecec;
+        line-height: 50px;
+        height: 50px;
+        display: block;
+        padding: 0px 20px;
+    }
+   
+    .mmenu > a > span {
+        background-image: url('/img/bar-menu.png');
+        display: block;
+        width: 30px;
+        height: 50px;
+        float: right;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: 100% 50%;
+    }
+}

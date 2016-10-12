@@ -1,0 +1,63 @@
+<h1><?php echo $this->translate('Base list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-base', array('action'=>'add'));?>">
+        <span class='add icon'>+</span> <?php echo $this->translate('add base');?>
+    </a>
+    <a href="<?php echo $this->url('sms-base', array('action'=>'export'));?>">
+        <span class='down icon'></span> <?php echo $this->translate('download base');?>
+    </a>
+</div>
+<div class="itemlist">
+    <?php if (!$this->baseList): ?>
+        <h2><?php echo $this->translate('Base list is empty'); ?></h2>
+    <?php else: ?>
+    <?php foreach ($this->baseList as $base): ?>
+    <div class="listsitem">
+        <a href="/" onclick="return false;" title="<?php echo $this->translate($base->getStatus()->getName()); ?>" 
+            class="<?php echo $base->getStatus()->getId() == 1 ?  "ready" : "busy"; ?>">
+            <div class="statusdesc">
+                <div class="arr"></div>
+                <div class="desc"><?php echo $this->translate($base->getStatus()->getName()); ?></div>
+            </div>
+        </a>
+        <span class="itemname <?php echo $base->getStatus()->getId() == 1 ? "ready" : "busy"; ?>">
+            <?php echo $base->getName(); ?> (
+            <?php echo " ".$this->translate("numbers");?>:
+            <?php echo $this->counts[$base->getId()]; ?> 
+            )
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <p><span class="edit"></span>
+                    <a href="<?php echo $this->url('sms-base', array('action'=>'edit','id'=> $base->getId())); ?>">
+                        <?php echo $this->translate('edit'); ?>
+                    </a>
+                </p>
+                <p><span class="delete"></span>
+                    <a href="<?php echo $this->url('sms-base', array('action'=>'delete','id'=> $base->getId())); ?>">
+                        <?php echo $this->translate('delete'); ?>
+                    </a>
+                </p>
+                <p><span class="numbers"></span>
+                    <a href="<?php echo $this->url('sms-phone', array('action'=>'base','id'=> $base->getId())); ?>">
+                        <?php echo $this->translate('edit numbers'); ?>
+                    </a>
+                </p>
+                <p><span class="download"></span>
+                    <a href="<?php echo $this->url('sms-base', array('action'=>'prepare','id'=> $base->getId())); ?>">
+                        <?php echo $this->translate('prepare to download'); ?>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationHelper($baseList, $page, '/service/base', 10); ?>
+        </div>
+    <?php endif; ?>
+</div>
+

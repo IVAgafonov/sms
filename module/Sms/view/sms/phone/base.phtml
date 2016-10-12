@@ -1,0 +1,57 @@
+<h1><?php echo $this->translate('Numbers list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-base', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+    <a href="<?php echo $this->url('sms-phone', array('action'=>'add','id' => $this->baseId));?>">
+        <span class='add icon'>+</span> <?php echo $this->translate('add phone');?>
+    </a>
+</div>
+<?php if (isset($this->filterForm)): ?>
+<div class="filterform">
+        <?php $this->filterForm->prepare(); ?>
+        <?php echo $this->form()->openTag($this->filterForm); ?>
+
+        <?php echo $this->formRow($this->filterForm->get('Filter')->get('filter')); ?>
+        <?php echo $this->formRow($this->filterForm->get('submit')); ?>
+
+        <?php echo $this->form()->closeTag($this->filterForm); ?>
+</div>
+<?php endif ?>
+<div class="itemlist">
+    <?php if (!$this->phoneList): ?>
+        <h2><?php echo $this->translate('Phone list is empty'); ?></h2>
+    <?php else: ?>
+        <?php foreach ($this->phoneList as $number): ?>
+    <div class="listsitem">
+        <input type="checkbox" class="numberCheck" id="num<?php echo $number->getId(); ?>"
+            <?php if ($number->getStatus()) echo "checked=checked"; ?>
+        />
+
+        <span class="itemname ready">
+            <?php echo $number->getNumber(); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <p><span class="edit"></span>
+                    <a href="<?php echo $this->url('sms-phone', array('action'=>'edit','id'=> $number->getId())); ?>">
+                        <?php echo $this->translate('edit'); ?>
+                    </a>
+                </p>
+                <p><span class="delete"></span>
+                    <a href="<?php echo $this->url('sms-phone', array('action'=>'delete','id'=> $number->getId())); ?>">
+                        <?php echo $this->translate('delete'); ?>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->PaginationPhoneFilteredHelper($phoneList, $page, $baseId, $filter,'/service/phones/base', 10); ?>
+        </div>
+    <?php endif ?>
+</div>

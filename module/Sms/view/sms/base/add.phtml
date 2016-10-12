@@ -1,0 +1,23 @@
+<?php $this->headTitle($this->translate('Add base')); ?>
+<h1><?php echo $this->translate('Add base'); ?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-base', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+<div class="mainform">
+<?php 
+$this->form->prepare();
+echo $this->form()->openTag($this->form);
+echo $this->formRow($this->form->get('Base')->get('id'));
+echo $this->formRow($this->form->get('Base')->get('name'));
+echo $this->formRow($this->form->get('Base')->get('param_name1'));
+echo $this->formRow($this->form->get('Base')->get('param_name2'));
+echo $this->formRow($this->form->get('Base')->get('param_name3'));
+echo $this->formRow($this->form->get('Base')->get('param_name4'));
+echo $this->formRow($this->form->get('submit'));
+echo $this->form()->closeTag($this->form);
+?>
+</div>

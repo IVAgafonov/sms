@@ -1,0 +1,48 @@
+<?php $this->headTitle($this->translate('Edit phone')); ?>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-phone', array('action'=>'base', 'id' => $this->baseParams['id']));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+<div class="mainform">
+<?php 
+$this->form->prepare();
+echo $this->form()->openTag($this->form);
+
+echo $this->formRow($this->form->get('Phone')->get('id'));
+echo $this->formRow($this->form->get('Phone')->get('number'));
+if ($this->baseParams['param_name1'] !='' || 
+    $this->baseParams['param_name2'] !='' ||
+    $this->baseParams['param_name3'] !='' ||
+    $this->baseParams['param_name4'] !=''):
+?>
+    <p><?php echo $this->translate('Parameters'); ?>:</p>
+    <hr/>
+<?php
+endif;
+if ($this->baseParams['param_name1'] != "") {
+echo "<label><span>".$this->baseParams['param_name1']."</span>";
+echo $this->formRow($this->form->get('Phone')->get('value1'));
+echo "</label>";
+}
+if ($this->baseParams['param_name2'] != "") {
+echo "<label><span>".$this->baseParams['param_name2']."</span>";
+echo $this->formRow($this->form->get('Phone')->get('value2'));
+echo "</label>";
+}
+if ($this->baseParams['param_name3'] != "") {
+echo "<label><span>".$this->baseParams['param_name3']."</span>";
+echo $this->formRow($this->form->get('Phone')->get('value3'));
+echo "</label>";
+}
+if ($this->baseParams['param_name4'] != "") {
+echo "<label><span>".$this->baseParams['param_name4']."</span>";
+echo $this->formRow($this->form->get('Phone')->get('value4'));
+echo "</label>";
+}
+echo $this->formRow($this->form->get('submit'));
+echo $this->form()->closeTag($this->form);
+?>
+</div>

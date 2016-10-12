@@ -1,0 +1,116 @@
+/*
+@Copyright (C) 2016 Igor Agafonov
+@licenseGPL
+*/
+/* 
+    Created on : 02.08.2016, 17:32:33
+    Author     : Igor
+*/
+
+.lpmain {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    margin: 10px 0px 0px -150px;
+}
+
+.loginhead {
+    height: 46px;
+    background: #079478;
+    position: relative;
+}
+
+.loginhead > h1 {
+    margin: 0px;
+    color: #e7ecec;
+    line-height: 46px;
+    padding: 0px 10px;
+    font-size: 16pt;
+}
+
+.loginhead > h1 > a {
+    color: #e7ecec;
+    text-decoration: none;
+}
+
+.lform {
+    text-align: right;
+    padding: 0px 20px 15px 20px;
+    background: #dde4e4;
+}
+
+.lform > a {
+    color: #075445;
+}
+
+.lform > a:hover {
+    color: #054236;
+}
+
+.lform > h1 {
+    margin: 0px;
+    padding: 15px 0px 0px 0px;
+    font-size: 16pt;
+    font-weight: 400;
+    color: #333;
+    text-align: left;
+}
+
+dl.zend_form {
+    margin: 0px;
+}
+
+.zend_form > dt > label {
+    
+}
+
+.zend_form > dt {
+    margin: 20px 0px 0px 0px;
+    text-align: left;
+} 
+
+.zend_form > dt > label {
+    line-height: 24px;
+    color: #2a3333;
+}
+
+.zend_form > dd {
+    margin: 0px;
+} 
+
+.zend_form > dd > input[type='text'], .zend_form > dd > input[type='password']  {
+    width: 99%;
+    line-height: 35px;
+    font-size: 14pt;
+    text-indent: 10px;
+    border-radius: 2px;
+    border: 1px solid #a9afae;
+}
+
+.zend_form > dd > button[type='submit'] {
+    width: 100%;
+    line-height: 33px;
+    font-size: 14pt;
+    cursor: pointer;
+    border: 1px solid #a9afae;
+    border-radius: 2px;
+    margin: 25px 0px 50px 0px;
+}
+
+.zend_form > dd > button[type='submit']:hover {
+    background: #d6d6d6;
+}
+
+.zend_form > dd > ul {
+    margin: 0px 0px 20px 0px;
+    padding: 4px 10px;
+    list-style-type: none;
+    text-align: left;
+    background: #bd3535;
+    border-radius: 2px;
+}
+
+.zend_form > dd > ul > li {
+    font-size: 10pt;
+    color: #e7ecec;
+}

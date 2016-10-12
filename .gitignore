@@ -45,3 +45,17 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Zf ignore files
+/vendor/
+*local.php
+
+# Empty files
+/logs/
+/data/
+/debug/
+/module/Sms/data/
+
+# NetBeans files
+/nbproject/
+

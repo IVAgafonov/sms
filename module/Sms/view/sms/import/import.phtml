@@ -1,0 +1,34 @@
+<h1><?php echo $this->translate('Import list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-import', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+<div class="mainform">
+    
+<?php 
+$this->importForm->prepare();
+echo $this->form()->openTag($this->importForm);
+
+echo $this->formLabel($this->importForm->get('base_select'));
+echo $this->formSelect($this->importForm->get('base_select'));    
+?> 
+<?php if (!empty($this->importForm->get('base_select')->getMessages())): ?>
+                <ul>
+                    <?php foreach ($this->importForm->get('base_select')->getMessages() as $el): ?>                
+                        <li>
+                            <?php echo $this->translate($el); ?>
+                        </li>                   
+                     <?php endforeach ?>
+                </ul>
+<?php endif ?>
+<?php
+echo $this->formRow($this->importForm->get('base_name'));
+echo $this->formRow($this->importForm->get('base_file'));
+echo $this->formRow($this->importForm->get('submit'));
+
+echo $this->form()->closeTag($this->importForm);
+?>
+</div>

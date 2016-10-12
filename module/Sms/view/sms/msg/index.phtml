@@ -1,0 +1,41 @@
+<h1><?php echo $this->translate('Message list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-msg', array('action'=>'add'));?>">
+        <span class='add icon'>+</span> <?php echo $this->translate('add message');?>
+    </a>
+</div>
+<div class="itemlist">
+    <?php if (!$this->msgList): ?>
+        <h2><?php echo $this->translate('Message list is empty'); ?></h2>
+    <?php else: ?>
+    <?php foreach ($this->msgList as $msg): ?>
+    <div class="listsitem">
+        <a href="/" onclick="return false;" title="<?php echo $this->translate("message"); ?>" class="ready">
+        </a>
+        <span class="itemname ready">
+            <?php echo $msg->getTitle(); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <p><span class="edit"></span>
+                    <a href="<?php echo $this->url('sms-msg', array('action'=>'edit','id'=> $msg->getId())); ?>">
+                        <?php echo $this->translate('edit'); ?>
+                    </a>
+                </p>
+                <p><span class="delete"></span>
+                    <a href="<?php echo $this->url('sms-msg', array('action'=>'delete','id'=> $msg->getId())); ?>">
+                        <?php echo $this->translate('delete'); ?>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationHelper($msgList, $page, '/service/messages/index', 10); ?>
+        </div>
+    <?php endif ?>
+</div>

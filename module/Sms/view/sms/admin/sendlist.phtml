@@ -1,0 +1,81 @@
+<h1><?php echo $this->translate('Delivery list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-admin', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+    <div class='udata'>
+        <p class='desc'>
+            <strong>
+                <?php echo $this->translate("User's email");?>:
+            </strong>
+        </p>
+        <p class='val'>
+            <?php echo $this->user['email'];?>:
+        </p>
+    </div>
+<div class="itemlist">
+    <?php if (!$this->sendList): ?>
+        <h2><?php echo $this->translate('Send list is empty'); ?></h2>
+    <?php else: ?>
+    <?php foreach ($this->sendList as $send): ?>
+    <div class="listsitem">
+        <a href="/"  onclick="return false;" title="<?php echo $this->translate("send"); ?>" class="send<?php echo $send->getStatus(); ?>">
+            <div class="statusdesc">
+                <div class="arr"></div>
+                <div class="desc">
+                    <?php 
+                        switch($send->getStatus()) {
+                            case 1:
+                                echo $this->translate("Wait");
+                                break;
+                            case 2:
+                                echo $this->translate("Prepair");
+                                break;
+                            case 3:
+                                echo $this->translate("Sending");
+                                break;
+                            case 4:
+                                echo $this->translate("Suspended");
+                                break;
+                            case 5:
+                                echo $this->translate("Complete");
+                                break;
+                            case 6:
+                                echo $this->translate("Error");
+                                break;
+                            default: $this->translate("Wait");
+                        }
+                    ?></div>
+            </div>
+        </a>
+        <span class="itemname <?php echo $send->getStatus() == 1 ? "ready" : "busy"; ?>">
+            <?php echo $send->getBaseName(); ?> - 
+            <?php echo " ".$send->getMessageTitle(); ?> : 
+            <?php echo date_format($send->getStartTime(), 'd.m.y H:i'); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <p><span class="download"></span>
+                    <a href="<?php echo $this->url('sms-admin', array('action'=>'download', 'id'=> $send->getBaseId())); ?>">
+                        <?php echo $this->translate('download'); ?>
+                    </a>
+                </p>
+                <p><span class="delete"></span>
+                    <a onclick='return confirmDelete();' href="<?php echo $this->url('sms-admin', array('action'=>'delete', 'id'=> $send->getId())); ?>">
+                        <?php echo $this->translate('delete'); ?>
+                    </a>
+                </p>                   
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationHelper($sendList, $page, '/service/admin/sendlist/'.$this->user['user_id'].'', 10); ?>
+        </div>
+    <?php endif ?>
+</div>
+

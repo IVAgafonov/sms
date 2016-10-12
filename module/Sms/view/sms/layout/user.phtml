@@ -1,0 +1,116 @@
+<?php echo $this->doctype();?>
+<?php //if (!isset($user)) $user = new \Sms\Entity\User(); ?>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('SMS service'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0, user-scalable=no')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        //->prependStylesheet($this->basePath('css/style.css'))
+                        //->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                        //->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+                        ->prependStylesheet($this->basePath('css/forms.css'))
+                        ->prependStylesheet($this->basePath('css/menu.css'))
+                        ->prependStylesheet($this->basePath('css/jquery.datetimepicker.css'))
+                        ->prependStylesheet($this->basePath('css/template.css')) ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/main.js'))
+            ->prependFile($this->basePath('js/jquery.datetimepicker.full.min.js'))
+            ->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+            
+        ; ?>
+
+    </head>
+    <body>
+        <header>
+            <div class="main">
+                <div class="logo">
+                    <a href="/" onclick="return false;" class="ulogo"></a>
+                    <div class="userdata">
+                        <ul>
+                            <li>
+                                <h2><?php echo $user->getEmail(); ?></h2>
+                                <div class="lang">
+                                    <a href="/" onclick="return false;" class="flag" style="background-image: url('/img/langs/<?php echo $this->currentLang; ?>.png');"></a>
+                                    <div class="langs">
+                                        <?php foreach ($this->langs as $lang): ?>
+                                            <?php if ($lang[0] != $this->currentLang): ?>
+                                            <div class="langitem">
+                                                <a href="<?php echo $this->serverUrl(true).'?lang='.$lang[0]; ?>" ><span style="background-image: url('/img/langs/<?php echo $lang[0]; ?>.png')"></span> 
+                                                <?php echo $this->translate($lang[1]); ?>
+                                                </a>
+                                            </div>     
+                                            <?php endif; ?>
+                                        <?php endforeach ?>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p><?php echo $this->translate('Cost of send') ?></p>
+                                <p><span><?php echo $user->getSendCost(); ?> <?php echo $this->translate('rub') ?></span></p>
+                            </li>
+                            <li>
+                                <p><?php echo $this->translate('Balance') ?></p>
+                                <p><span><?php echo $user->getBalance(); ?> <?php echo $this->translate('rub') ?></span></p>
+                            </li>
+                            <?php if ($user->getCredit() > 0): ?>
+                            <li>
+                                <p><?php echo $this->translate('Credit limit') ?></p>
+                                <p><span><?php echo $user->getCredit(); ?><?php echo $this->translate('rub') ?></span></p>
+                            </li>
+                            <?php endif; ?>
+                            <?php if($user->getRoles()[0]->getId() == 3):  ?>
+                            <li><a href="/service/admin"><?php echo $this->translate('Admin panel') ?></a></li>
+                            <?php endif; ?>
+                            <li><a href="/user/logout"><?php echo $this->translate('Logout') ?></a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="title">
+                    <h1><?php echo $this->translate('SMS service') ?></h1>
+                </div>
+                <div class="nav dstv">
+                    <?php echo $this->navigation('navigation')
+                            ->menu()->setMinDepth(0)
+                            ->setMaxDepth(0)
+                            ->setUlClass('nav navbar-nav'); ?>
+                </div>
+                <div class="mmenu mobv">
+                    <a href="/" onclick="togglemMenu(); return false;"><?php echo $this->translate('MENU') ?><span></span></a>
+                </div>
+            </div>
+                <h1></h1> 
+        </header>
+        <nav>
+            <div class="main">
+                <div class="mobmenu mobv">
+                    <?php echo $this->navigation('navigation')
+                        ->menu()->setMinDepth(0)
+                        ->setMaxDepth(0)
+                        ->setUlClass('mob-nav'); ?>
+                </div>
+            </div>
+        </nav>
+        <div class="mainarea">
+            <div class="main">
+                <?php echo $this->content; ?>
+            </div>
+        </div>
+        <div class="main">
+            <div class="footer"></div>
+        </div>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

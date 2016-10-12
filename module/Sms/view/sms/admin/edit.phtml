@@ -1,0 +1,37 @@
+<?php $this->headTitle($this->translate('Edit user')); ?>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-admin', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+<div class="mainform">
+    <div class='udata'>
+        <p class='desc'>
+            <strong>
+                <?php echo $this->translate("User's email");?>:
+            </strong>
+        </p>
+        <p class='val'>
+            <?php echo $this->user['email'];?>:
+        </p>
+    </div>
+<?php 
+$this->form->prepare();
+echo $this->form()->openTag($this->form);
+echo $this->formRow($this->form->get('User')->get('user_id'));
+echo $this->formRow($this->form->get('User')->get('naming'));
+echo $this->formRow($this->form->get('User')->get('send_cost'));
+echo $this->formRow($this->form->get('User')->get('balance'));
+?>
+<label>
+    <?php  echo $this->formCheckbox($this->form->get('User')->get('send_flag'));?>
+    <?php  echo $this->translate($this->form->get('User')->get('send_flag')->getLabel()) ;?>
+</label>
+<?php 
+echo $this->formRow($this->form->get('submit'));
+echo $this->form()->closeTag($this->form);
+
+?>
+</div>

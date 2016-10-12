@@ -1,0 +1,44 @@
+<?php $this->headTitle($this->translate('Create new delivery')); ?>
+<h1><?php echo $this->translate('new delivery'); ?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-send', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+<div class="mainform">
+<?php 
+$this->form->prepare();
+echo $this->form()->openTag($this->form);
+echo $this->formLabel($this->form->get('base_id'));
+echo $this->formSelect($this->form->get('base_id'));
+?>
+<?php if (!empty($this->form->get('base_id')->getMessages())): ?>
+                <ul>
+                    <?php foreach ($this->form->get('base_id')->getMessages() as $el): ?>                
+                        <li>
+                            <?php echo $this->translate($el).$this->min_time; ?>
+                        </li>                   
+                     <?php endforeach ?>
+                </ul>
+<?php endif ?>
+<?php    
+echo $this->formRow($this->form->get('message_id'));
+echo $this->formLabel($this->form->get('start_time'));
+echo $this->formText($this->form->get('start_time'));
+?>
+<?php if (!empty($this->form->get('start_time')->getMessages())): ?>
+                <ul>
+                    <?php foreach ($this->form->get('start_time')->getMessages() as $el): ?>                
+                        <li>
+                            <?php echo $this->translate($el).$this->min_time; ?>
+                        </li>                   
+                     <?php endforeach ?>
+                </ul>
+<?php endif ?>
+<?php 
+echo $this->formRow($this->form->get('submit'));
+echo $this->form()->closeTag($this->form);
+?>
+</div>

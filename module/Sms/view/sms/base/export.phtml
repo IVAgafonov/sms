@@ -1,0 +1,54 @@
+<h1><?php echo $this->translate('Export list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-base', array('action'=>'index'));?>">
+        <span class='back icon'><</span><?php echo $this->translate('back');?>
+    </a>
+</div>
+<div class="itemlist">
+    <?php if (!$this->exportList): ?>
+        <h2><?php echo $this->translate('Download list is empty'); ?></h2>
+    <?php else: ?>
+    <?php foreach ($this->exportList as $exportLine): ?>
+    <div class="listsitem">
+        <a href="/" onclick="return false;" title="<?php echo $this->translate("export"); ?>" class="export<?php echo $exportLine->getStatus(); ?>">
+            <div class="statusdesc">
+                <div class="arr"></div>
+                <div class="desc impdesc">
+                    <?php 
+                        switch($exportLine->getStatus()) {
+                            case 1:
+                                echo $this->translate("Export process");
+                                break;
+                            case 2:
+                                echo $this->translate("Export completed");
+                                break;
+                            case 3:
+                                echo $this->translate("Error of import");
+                                break;
+                            default: $this->translate("Export process");
+                        }
+                    ?></div>
+            </div>
+        </a>
+        <span class="itemname ready">
+            <?php echo $this->translate("Base - ").$exportLine->getBaseName(); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                                <p><span class="download"></span>
+                    <a href="<?php echo $this->url('sms-base', array('action'=>'download','id'=> $exportLine->getId())); ?>">
+                        <?php echo $this->translate('download'); ?>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationHelper($this->exportList, $page, '/service/import/index', 10); ?>
+        </div>
+    <?php endif ?>
+</div>

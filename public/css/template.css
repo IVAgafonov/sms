@@ -1,0 +1,700 @@
+/*
+@Copyright (C) 2016 Igor Agafonov
+@licenseGPL
+*/
+body {
+    background: #e7ecec;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media  (max-width: 540px) {
+
+}
+
+@media  (min-width: 541px) and (max-width: 1000px) {
+
+}
+
+@media  (min-width: 1001px) { 
+
+}
+
+@media  (max-width: 540px) {
+    header {
+        height: 50px;
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 1000px) {
+    header {
+        height: 70px;
+    }
+}
+
+@media  (min-width: 1001px) { 
+    header {
+        height: 100px;
+    }
+}
+
+header > .main {
+    border-bottom: 1px solid #c7c7c7;    
+}
+
+header > .main > .nav {
+    float: right;
+}
+
+@media  (max-width: 540px) {
+    .main {
+        min-width: 300px;
+        margin: 0px 10px;
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 1000px) {
+    .main {
+        width: 540px;
+        margin: 0px auto;
+    }
+}
+
+@media  (min-width: 1001px) {
+    .main {
+        width: 960px;
+        margin: 0px auto;
+    }
+}
+
+@media  (max-width: 540px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 1000px) {
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media  (min-width: 1001px) { 
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.logo {
+    display: block;
+    float: left;
+    position: relative;
+    background: #079478;  
+}    
+
+.ulogo {    
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url('/img/profile-user.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.userdata {
+    display: none;
+    width: 300px;
+    background: #079478;
+    position: absolute;
+    z-index: 20;
+}
+
+.logo:hover > .userdata {
+    display: block;
+}
+
+.userdata > ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.userdata > ul > li {
+    border-bottom: 1px solid #11a084;
+}
+
+.userdata > ul > li > h2 {
+    margin: 0px;
+    font-size: 14pt;
+    color: #e7ecec;
+    font-weight: 400;
+    padding: 12px 30px;
+}
+
+.userdata > ul > li > p:first-child {
+    margin: 0px;
+    font-size: 14pt;
+    color: #e7ecec;
+    font-weight: 400;
+    padding: 12px 30px 0px 30px;
+}
+
+.userdata > ul > li > p:last-child {
+    margin: 0px;
+    font-size: 14pt;
+    color: #e7ecec;
+    font-weight: 400;
+    padding: 0px 30px 12px 30px;
+    text-align: right;
+}
+
+.userdata > ul > li > a {
+margin: 0px;
+    font-size: 14pt;
+    color: #e7ecec;
+    font-weight: 400;
+    display: block;
+    text-decoration: none;
+    padding: 12px 30px;
+}
+
+.userdata > ul > li > a:hover {
+    background: #077963;
+}
+
+.title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+@media  (max-width: 540px) {
+    .title > h1 {
+        line-height: 50px;
+        padding: 0px 0px 0px 10px;
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 1000px) {
+    .title > h1 {
+        line-height: 70px;
+        padding: 0px 0px 0px 20px;
+    }
+}
+
+@media  (min-width: 1001px) { 
+    .title > h1 {
+        line-height: 100px;
+        padding: 0px 0px 0px 50px;
+    }
+}
+
+.title > h1 {
+    margin: 0px;
+    font-size: 18pt;
+    color: #272727;
+    font-weight: 400;
+}
+
+@media  (max-width: 540px) {
+    .title > h1 {
+        font-size: 14pt;
+    }
+}
+    
+.lang {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: block;
+    width: 46px;
+    height: 46px;
+    background: #079478;
+}
+
+.lang:hover {
+    background: #15a98b;
+}
+
+.lang:hover > .langs{
+    display: block;
+}
+
+.lang > a {
+    height: 30px;
+    width: 30px;
+    display: block;
+    background-size: 100%;
+    border: 2px solid #e7ecec;
+    border-radius: 50%;
+    border-radius: 20px;
+    margin: 6px;
+}
+
+.langs {
+    display: none;
+    background: #15a98b;
+    width: 200px;
+    position: absolute;
+    top: 46px;
+    right: 0px;
+    float: right;
+}
+
+.langs > .langitem > a {
+    color: #e7ecec;
+    text-decoration: none;
+    line-height: 47px;
+    display: block;
+    height: 47px;
+}
+
+.langs > .langitem > a:hover {
+    background: #189e83;
+}
+
+.langs > .langitem > a > span {
+    height: 30px;
+    width: 30px;
+    display: block;
+    float: left;
+    background-size: 100%;
+    border: 2px solid #e7ecec;
+    border-radius: 50%;
+    border-radius: 20px;
+    margin: 6px;
+}
+
+@media  (max-width: 540px) {
+    .mainarea > .main > h1 {
+        text-align: center;
+    }
+}
+
+.mainarea > .main > h1 {
+    margin: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid #c7c7c7;
+    color: #186ec5;
+    font-size: 16pt;
+    font-weight: 400;
+}
+
+.alert {
+    margin: 0px;
+    padding: 15px;
+    list-style-type: none;
+}
+
+.alert > li {
+    font-size: 14pt;
+    font-weight: 100;
+    color: #e7ecec;
+}
+
+.alert-success {
+    background: #079478;
+}
+
+.alert-danger {
+    background: #c13737;
+}
+
+.secnav {
+    padding: 5px 0px;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.secnav > a {
+    color: #186ec5;
+    text-decoration: none;
+    line-height: 30px;
+    display: inline-block;
+    height: 30px;
+    margin: 0px 20px 0px 0px;
+}
+
+.secnav > a > span {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    color: #e7ecec;
+    border-radius: 50%;
+    border-radius: 20px;
+    margin: 0px 5px 0px 0px;
+    font-weight: bold;
+    vertical-align: top;
+    font-size: 10pt;
+}
+
+.secnav > a > span.down {
+    background-image: url(/img/downicon2.png);
+    background-color: #079478;
+    background-size: 48%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.secnav > a > span.add {
+    background-color: #079478;
+}
+
+.secnav > a > span.back {
+    background-color: #daa019;
+}
+
+.secnav > a:hover > span.add {
+    background-color: #0a7762;
+}
+
+.secnav > a:hover > span.back {
+    background-color: #bb8b1a;
+}
+
+.itemlist {
+    padding: 10px 0px;
+}
+
+.itemlist > p {
+    margin: 0px;
+    line-height: 38px;
+    border-bottom: 1px solid #dfe4e4;
+}
+
+.listsitem {
+    height: 38px;
+    border-bottom: 1px solid #dae0e0;
+}
+
+.listsitem:hover {
+    background: #d9dede;
+}
+
+.itemname {
+    line-height: 38px;
+    display: block;
+    white-space: nowrap;
+    width: 75%;
+    float: left;
+}
+
+.itemname.ready {
+    color: #12587b;
+    font-weight: bold;
+}
+
+.itemname.busy {
+    color: #9c9d9e;
+    font-weight: bold;
+}
+
+.numberCheck {
+    display: block;
+    float: left;
+    margin: 12px 10px 0px 0px;
+}
+
+.itemlist > h2 {
+    font-size: 14pt;
+    font-weight: 400;
+    text-indent: 10pt;
+    color: #333333;
+    margin: 50px 0px;
+}
+
+.itemlist > .listsitem > a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 3px 10px 3px 0px;
+    background-size: 50%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.itemlist > .listsitem > a.ready {
+    background-image: url('/img/ready.png');
+}
+
+.itemlist > .listsitem > a.busy {
+    background-image: url('/img/locked.png');   
+}
+
+.itemlist > .listsitem > a.import1 {
+    background-image: url(/img/wait.png);
+}
+
+.itemlist > .listsitem > a.import2 {
+    background-image: url(/img/ready.png);
+}
+
+.itemlist > .listsitem > a.import3 {
+    background-image: url(/img/locked.png);
+}
+
+.itemlist > .listsitem > a.export1 {
+    background-image: url(/img/wait.png);
+}
+
+.itemlist > .listsitem > a.export2 {
+    background-image: url(/img/ready.png);
+}
+
+.itemlist > .listsitem > a.export3 {
+    background-image: url(/img/locked.png);
+}
+
+.itemlist > .listsitem > a.send1 {
+    background-image: url(/img/wait.png);
+}
+
+.itemlist > .listsitem > a.send2 {
+    background-image: url(/img/locked.png);
+}
+
+.itemlist > .listsitem > a.send3 {
+    background-image: url(/img/play.png);
+}
+
+.itemlist > .listsitem > a.send4 {
+    background-image: url(/img/suspended.png);
+}
+
+.itemlist > .listsitem > a.send5 {
+    background-image: url(/img/ready.png);
+}
+
+.itemlist > .listsitem > a.send6 {
+    background-image: url(/img/locked.png);
+}
+
+
+/*
+
+
+.itemlist > .listsitem > a.send1 {
+    background-image: url('/img/send1.png');   
+}
+
+.itemlist > .listsitem > a.send2 {
+    background-image: url('/img/send2.png');   
+}
+
+.itemlist > .listsitem > a.send3 {
+    background-image: url('/img/send3.png');   
+}
+
+.itemlist > .listsitem > a.import0 {
+    background-image: url(/img/send1.png);
+}
+
+.itemlist > .listsitem > a.import1 {
+    background-image: url(/img/send3.png);
+}
+
+.itemlist > .listsitem > a.import2 {
+    background-image: url(/img/send2.png);
+}
+*/
+.statusdesc {
+    display: none;
+    position: absolute;
+    left: 30px;
+    height: 33px;
+}
+
+.statusdesc > .arr {
+    background: #079478;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    left: 6px;
+    top: 9px;
+}
+
+.statusdesc > .desc {
+    background: #079478;
+    color: #e7ecec;
+    line-height: 33px;
+    padding: 0px 30px;
+    margin: 0px 0px 0px 10px;
+}
+
+.impdesc {
+    width: 150px;
+    text-align: center;
+}
+
+.itemlist > .listsitem > a:hover > .statusdesc {
+    display: block;
+}
+
+.listitemmenu {
+    background-image: url('/img/menu-button.png');
+    background-color: #079478;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-position: 50% 50%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    margin: 4px 0px 0px 0px;
+    cursor: pointer;
+    position: relative;
+}
+
+.listitemmenu:hover {
+    background-color: #0a7762;
+}
+
+.listitemsubmenu {
+    display: none;
+    width: 220px;
+    background: #0a7762;
+    position: absolute;
+    right: 30px;
+    z-index: 10;
+}
+
+@media  (max-width: 540px) {
+    .listitemsubmenu {
+        width: 270px;
+    }
+}
+
+.listitemsubmenu > p {
+    margin: 0px;
+    line-height: 36px;
+    border-bottom: 1px solid #11866f;
+}
+
+.listitemsubmenu > p:hover {
+    background: #126d5b;
+}
+
+.listitemsubmenu > p > span {
+    display: block;
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin: 5px;
+    background-color: #e7ecec;
+    border-radius: 50%;
+    border-radius: 20px;
+    background-size: 47%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.listitemsubmenu > p > span.download {
+    background-image: url('/img/downicon.png');
+}
+
+.listitemsubmenu > p > span.edit {
+    background-image: url('/img/editicon.png');
+}
+
+.listitemsubmenu > p > span.delete {
+    background-image: url('/img/deleteicon.png');
+}
+
+.listitemsubmenu > p > span.numbers {
+    background-image: url('/img/editnicon.png');
+}
+
+.listitemsubmenu > p > a {
+    text-decoration: none;
+    color: #e7ecec;
+    display: block;
+}
+
+.listitemmenu:hover > .listitemsubmenu {
+    display: block;
+}
+
+.listitemsubmenu > ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.listitemsubmenu > ul > li {
+    border-bottom: 1px solid #11866f;
+}
+
+.listitemsubmenu > ul > li > p {
+    margin: 0px;
+    padding: 5px 0px 0px 5px;
+    font-size: 10pt;
+    color: #ececec;
+}
+
+.listitemsubmenu > ul > li > p.impdtitle {
+    padding: 10px 0px 0px 10px;
+    font-weight: bold;
+}
+
+.listitemsubmenu > ul > li > p.impdvalue {
+    padding: 0px 10px 10px 0px;
+    text-align: right;
+}   
+
+.footer {
+    border-top: 5px solid #dbdede;
+    height: 120px;
+}
+
+.pages {
+    margin: 40px 0px 20px 0px;
+    text-align: center;
+}
+
+.pages > a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #079478;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    color: #e7ecec;
+    margin: 2px;
+}
+
+.pages > a.long {
+    width: 70px;
+}
+
+.pages > a.current {
+    font-weight: bold;
+    background: #085244;
+}
+
+@media  (max-width: 1000px) { .mobv { display: block; } }
+@media  (min-width: 1001px) { .mobv { display: none; } }
+
+@media  (max-width: 1000px) { .dstv { display: none; } }
+@media  (min-width: 1001px) { .dstv { display: block; } }
+
+.udata {
+    margin: 0px 0px 30px 0px;
+}
+
+.udata > .desc {
+    color: #333333;
+}
+
+.udata > .val {
+    font-size: 14pt;
+    color: #333333;
+}

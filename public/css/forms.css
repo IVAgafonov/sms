@@ -1,0 +1,125 @@
+/*
+@Copyright (C) 2016 Igor Agafonov
+@licenseGPL
+*/
+/* 
+    Created on : 02.08.2016, 17:32:16
+    Author     : Igor
+*/
+
+.mainform {
+    width: 300px;
+    padding: 20px 0px;
+    margin: 0px auto;
+}
+
+.mainform > form > label {
+    width: 100%;
+    display: block;
+    margin: 20px 0px 0px 0px;
+}
+
+.mainform > form > label > span {
+    width: 100%;
+    display: block;
+    padding: 0px 0px 5px 0px;
+}
+
+.mainform > form > label > input[type="text"], .mainform > form > input[type="text"] {
+    width: 99%;
+    line-height: 35px;
+    font-size: 14pt;
+    text-indent: 10px;
+    border-radius: 2px;
+    border: 1px solid #a9afae;
+}
+
+.mainform > form > label > input[type="file"] {
+    width: 100%;
+}
+
+.mainform > form > label > input.upload {
+    font-size: 12pt;
+}
+
+.mainform > form > input[type="submit"] {
+    width: 100%;
+    line-height: 33px;
+    font-size: 14pt;
+    cursor: pointer;
+    border: 1px solid #a9afae;
+    border-radius: 2px;
+    margin: 25px 0px 50px 0px;
+}
+
+.mainform > form > input[type="submit"]:hover {
+    background: #d6d6d6;
+}
+
+.mainform > form > ul {
+    margin: 0px 0px 15px 0px;
+    background: #bd3535;
+    border-radius: 2px;
+    padding: 10px 30px;
+}
+
+.mainform > form > ul > li {
+    color: #e7ecec;
+    font-size: 10pt;
+}
+
+.mainform > form > select, .mainform > form > label > select {
+    width: 99%;
+    line-height: 35px;
+    font-size: 14pt;
+    text-indent: 10px;
+    border-radius: 2px;
+    border: 1px solid #a9afae;
+    height: 40px;
+}
+
+.mainform > form > textarea {
+    width: 98%;
+    line-height: 35px;
+    font-size: 14pt;
+    text-indent: 10px;
+    border-radius: 2px;
+    border: 1px solid #a9afae;
+    resize: none;
+    height: 180px;
+}
+
+form > p.desc.left {
+    float: left;
+}
+
+form > p.desc.right {
+    float: right;
+}
+
+.desc {
+    margin: 10px 0px 0px 0px;
+}
+
+.filterform > form > input[type="text"] {
+    line-height: 35px;
+    font-size: 14pt;
+    text-indent: 10px;
+    border-radius: 2px;
+    border: 1px solid #a9afae;
+    margin: 5px 0px;
+    width: 200px;
+}
+
+.filterform > form > input[type="submit"] {
+    line-height: 33px;
+    font-size: 14pt;
+    cursor: pointer;
+    border: 1px solid #a9afae;
+    border-radius: 2px;
+    margin: 5px 0px 10px 0px;
+}
+
+.filterform > form > input[type="submit"]:hover {
+    background: #d6d6d6;
+}

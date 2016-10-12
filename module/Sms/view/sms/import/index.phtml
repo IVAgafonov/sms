@@ -1,0 +1,83 @@
+<h1><?php echo $this->translate('Import list');?></h1>
+<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger'));?>
+<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success'));?>
+<div class="secnav">
+    <a href="<?php echo $this->url('sms-import', array('action'=>'import'));?>">
+        <span class='add icon'>+</span><?php echo $this->translate('import file');?>
+    </a>
+</div>
+<div class="itemlist">
+    <?php if (!$this->importList): ?>
+        <h2><?php echo $this->translate('Import list is empty'); ?></h2>
+    <?php else: ?>
+    <?php foreach ($this->importList as $importLine): ?>
+    <div class="listsitem">
+        <a href="/" onclick="return false;" title="<?php echo $this->translate("import"); ?>" class="import<?php echo $importLine->getStatus(); ?>">
+            <div class="statusdesc">
+                <div class="arr"></div>
+                <div class="desc impdesc">
+                    <?php 
+                        switch($importLine->getStatus()) {
+                            case 1:
+                                echo $this->translate("Import process");
+                                break;
+                            case 2:
+                                echo $this->translate("Import completed");
+                                break;
+                            case 3:
+                                echo $this->translate("Error of import");
+                                break;
+                            default: $this->translate("Import process");
+                        }
+                    ?></div>
+            </div>
+        </a>
+        <span class="itemname ready">
+            <?php echo $this->translate("Base - ").$importLine->getBaseName(); ?>
+        </span>
+        <div class="listitemmenu">
+            <a href="/" onclick="return false;"></a>
+            <div class="listitemsubmenu">
+                <ul>
+                    <li>
+                        <p class="impdtitle"><?php echo $this->translate("Import date"); ?></p>
+                        <p class="impdvalue"><?php echo $importLine->getTimeStamp()->format('d-m-Y H:i'); ?></p>
+                    </li>
+                    <li>
+                        <p class="impdtitle"><?php echo $this->translate("Imported phones"); ?></p>
+                        <p class="impdvalue"><?php echo $importLine->getImported(); ?></p>
+                    </li>
+                    <li>
+                        <p class="impdtitle"><?php echo $this->translate("Errors of import"); ?></p>
+                        <p class="impdvalue"><?php echo $importLine->getFails(); ?></p>
+                    </li>
+                    <li>
+                        <p class="impdtitle"><?php echo $this->translate("Import status"); ?></p>
+                        <p class="impdvalue">
+                        <?php
+                        switch($importLine->getStatus()) {
+                            case 1:
+                                echo $this->translate("Import process");
+                                break;
+                            case 2:
+                                echo $this->translate("Import completed");
+                                break;
+                            case 3:
+                                echo $this->translate("Error of import");
+                                break;
+                            default: $this->translate("Import process");
+                        }
+                        ?>
+                        </p>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+        <div class="pages">
+            <?php  echo $this->paginationHelper($this->importList, $page, '/service/import/index', 10); ?>
+        </div>
+    <?php endif ?>
+</div>

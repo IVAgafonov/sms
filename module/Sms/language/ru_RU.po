@@ -1,0 +1,892 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ZendSkeletonApplication\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-07 22:11+0300\n"
+"PO-Revision-Date: 2016-10-07 22:12+0300\n"
+"Last-Translator: vragovR <vragovR@yandex.ru>\n"
+"Language-Team: ZF Contibutors <zf-devteam@zend.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../config/module.config.php:200
+msgid "Sms delivery"
+msgstr "Отправка sms"
+
+#: ../config/module.config.php:204
+msgid "Messages"
+msgstr "Сообщения"
+
+#: ../config/module.config.php:208
+msgid "Bases"
+msgstr "Базы"
+
+#: ../config/module.config.php:212
+msgid "base add"
+msgstr "добавление базы"
+
+#: ../config/module.config.php:217
+msgid "base edit"
+msgstr "редактирование базы"
+
+#: ../config/module.config.php:222
+msgid "phone list"
+msgstr "список номеров"
+
+#: ../config/module.config.php:227
+msgid "phone add"
+msgstr "добавить номер"
+
+#: ../config/module.config.php:232
+msgid "phone edit"
+msgstr "редактировать номер"
+
+#: ../config/module.config.php:239 ../view/sms/admin/translate.phtml:3
+msgid "Import"
+msgstr "Импорт"
+
+#: ../config/module.config.php:254
+msgid "Russian"
+msgstr "Русский"
+
+#: ../config/module.config.php:255
+msgid "English"
+msgstr "Английский"
+
+#: ../src/Sms/Controller/AdminController.php:74
+msgid "User successfully edited"
+msgstr "Пользователь успешно изменен"
+
+#: ../src/Sms/Controller/AdminController.php:109
+msgid "Send successfully deleted"
+msgstr "Рассылка успешно удалена"
+
+#: ../src/Sms/Controller/BaseController.php:65
+msgid "Base successfully added"
+msgstr "База успешно добавлена"
+
+#: ../src/Sms/Controller/BaseController.php:86
+#: ../src/Sms/Controller/MsgController.php:79
+msgid "Base successfully updated"
+msgstr "База успешно обновлена"
+
+#: ../src/Sms/Controller/BaseController.php:111
+msgid "Base successfully deleted"
+msgstr "База успешно удалена"
+
+#: ../src/Sms/Controller/BaseController.php:146
+msgid "Preparing to download was started"
+msgstr "Начало подготовки к загрузке"
+
+#: ../src/Sms/Controller/ImportController.php:70
+msgid "Import start"
+msgstr "Начало импорта"
+
+#: ../src/Sms/Controller/MsgController.php:58
+msgid "Message successfully added"
+msgstr "Сообщение успешно добавлено"
+
+#: ../src/Sms/Controller/MsgController.php:103
+msgid "Message successfully deleted"
+msgstr "Сообщение успешно удалено"
+
+#: ../src/Sms/Controller/PhoneController.php:36
+#: ../src/Sms/Mapper/BaseMapper.php:128 ../src/Sms/Service/BaseService.php:82
+msgid "Base not found"
+msgstr "База не найдена"
+
+#: ../src/Sms/Controller/PhoneController.php:90
+msgid "Phone number successfully added"
+msgstr "Номер успешно добавлен"
+
+#: ../src/Sms/Controller/PhoneController.php:126
+msgid "Phone number successfully edited"
+msgstr "Номер телефона успешно изменен"
+
+#: ../src/Sms/Controller/PhoneController.php:153
+msgid "Phone number successfully deleted"
+msgstr "Номер телефона успешно удален"
+
+#: ../src/Sms/Controller/PhoneController.php:179
+msgid "Error of change status"
+msgstr "Ошибка изменения статуса"
+
+#: ../src/Sms/Controller/SendController.php:58
+#: ../src/Sms/Controller/SendController.php:106
+msgid "Minimum sending time - "
+msgstr "Минимальное время отправки - "
+
+#: ../src/Sms/Controller/SendController.php:67
+#: ../src/Sms/Controller/SendController.php:115
+msgid "Can't find phone numbers in this base"
+msgstr "Номер телефона не найден в этой базе"
+
+#: ../src/Sms/Controller/SendController.php:78
+msgid "Delivery successfully added"
+msgstr "Рассылка успешно добавлена"
+
+#: ../src/Sms/Controller/SendController.php:127
+msgid "Delivery successfully edited"
+msgstr "Рассылка успешно изменена"
+
+#: ../src/Sms/Controller/SendController.php:149
+msgid "Delivery successfully deleted"
+msgstr "Рассылка успешно удалена"
+
+#: ../src/Sms/Facade/AdminFacade.php:92 ../src/Sms/Facade/BaseFacade.php:172
+msgid "Can't find export file. Please try again."
+msgstr "Файл экспорта не найден. Попробуйте еще раз."
+
+#: ../src/Sms/Factory/Form/FormFactory.php:45
+#: ../src/Sms/Factory/Form/FormFactory.php:58
+#: ../src/Sms/Factory/Form/FormFactory.php:73
+#: ../src/Sms/Factory/Form/FormFactory.php:107 ../src/Sms/Form/UserForm.php:34
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../src/Sms/Form/BaseFieldset.php:36 ../src/Sms/Form/ImportForm.php:68
+msgid "Base name"
+msgstr "Имя базы"
+
+#: ../src/Sms/Form/BaseFieldset.php:48 ../src/Sms/Form/BaseFieldset.php:60
+#: ../src/Sms/Form/BaseFieldset.php:72 ../src/Sms/Form/BaseFieldset.php:84
+msgid "Param name"
+msgstr "Параметр"
+
+#: ../src/Sms/Form/BaseForm.php:34 ../src/Sms/Form/PhoneForm.php:34
+msgid "Add"
+msgstr "Добавить"
+
+#: ../src/Sms/Form/FilterFieldset.php:24
+msgid "Filter"
+msgstr "Фильтр"
+
+#: ../src/Sms/Form/FilterForm.php:34
+msgid "Find"
+msgstr "Поиск"
+
+#: ../src/Sms/Form/ImportForm.php:42 ../src/Sms/Form/SendForm.php:53
+msgid "Select base"
+msgstr "Выберите базу"
+
+#: ../src/Sms/Form/ImportForm.php:43
+msgid "Import in new base"
+msgstr "Импортировать в новую базу"
+
+#: ../src/Sms/Form/ImportForm.php:84
+msgid "Base file (*.csv)"
+msgstr "Файл базы (*.csv)"
+
+#: ../src/Sms/Form/ImportForm.php:94 ../view/sms/import/index.phtml:15
+msgid "import"
+msgstr "импорт"
+
+#: ../src/Sms/Form/MsgFieldset.php:35
+msgid "Message name"
+msgstr "Название сообщения"
+
+#: ../src/Sms/Form/MsgFieldset.php:48
+msgid "Message text"
+msgstr "Текст сообщения"
+
+#: ../src/Sms/Form/PhoneFieldset.php:35
+msgid "Pnone number"
+msgstr "Номер телефона"
+
+#: ../src/Sms/Form/PhoneFieldset.php:108 ../src/Sms/Form/PhoneFieldset.php:109
+msgid "Number must contain 11 digits"
+msgstr "Номер должен содержать 11 цифр"
+
+#: ../src/Sms/Form/SendForm.php:75
+msgid "Select message"
+msgstr "Выберите сообщение"
+
+#: ../src/Sms/Form/SendForm.php:104
+msgid "Start time"
+msgstr "Время расслыки"
+
+#: ../src/Sms/Form/SendForm.php:115 ../view/sms/admin/sendlist.phtml:25
+#: ../view/sms/send/index.phtml:15
+msgid "send"
+msgstr "отправить"
+
+#: ../src/Sms/Form/UserFieldset.php:36 ../view/sms/layout/admin.phtml:60
+#: ../view/sms/layout/user.phtml:60
+msgid "Cost of send"
+msgstr "Цена отправки"
+
+#: ../src/Sms/Form/UserFieldset.php:48 ../view/sms/layout/admin.phtml:64
+#: ../view/sms/layout/user.phtml:64
+msgid "Balance"
+msgstr "Баланс"
+
+#: ../src/Sms/Form/UserFieldset.php:60
+msgid "Naming"
+msgstr "Нэйминг"
+
+#: ../src/Sms/Form/UserFieldset.php:71 ../src/Sms/Form/UserFieldset.php:73
+#: ../src/Sms/Form/UserFieldset.php:75
+msgid "User can send sms"
+msgstr "Пользователь может отправлять смс"
+
+#: ../src/Sms/Listener/LanguageListener.php:89
+msgid "Language successfully changed"
+msgstr "Язык успешно изменен"
+
+#: ../src/Sms/Mapper/ExportMapper.php:108
+#: ../src/Sms/Mapper/ExportProcessMapper.php:104
+#: ../src/Sms/Mapper/SendProcessMapper.php:105
+msgid "Export error"
+msgstr "Ошибка экспорта"
+
+#: ../src/Sms/Mapper/ImportMapper.php:107
+#: ../src/Sms/Mapper/ImportProcessMapper.php:102
+msgid "Import not found"
+msgstr "Импорт не найден"
+
+#: ../src/Sms/Mapper/MessageMapper.php:101
+#: ../src/Sms/Service/MessageService.php:67
+msgid "Message not found"
+msgstr "Сообщение не найдено"
+
+#: ../src/Sms/Mapper/PhoneMapper.php:112
+msgid "Phone number not found"
+msgstr "Номер не найден"
+
+#: ../src/Sms/Mapper/SendMapper.php:113 ../src/Sms/Service/SendService.php:28
+msgid "Record not found"
+msgstr "Запись не найдена"
+
+#: ../src/Sms/Service/BaseService.php:33
+msgid "Databases limit is exceeded"
+msgstr "Превышен лимит баз"
+
+#: ../src/Sms/Service/BaseService.php:55
+msgid "Base already exist"
+msgstr "База уже существует"
+
+#: ../src/Sms/Service/BaseService.php:67
+msgid "The base is busy"
+msgstr "База занята"
+
+#: ../src/Sms/Service/ExchangeService.php:37
+msgid "Error of upload file"
+msgstr "Ошибка загрузки файла"
+
+#: ../src/Sms/Service/ExchangeService.php:45
+msgid "Base name is not valid"
+msgstr "Не корректное имя базы"
+
+#: ../src/Sms/Service/MessageService.php:32
+msgid "Messages limit is exceeded"
+msgstr "Лимит сообщений превышен"
+
+#: ../src/Sms/Service/MessageService.php:54
+msgid "Message with this title already exist"
+msgstr "Сообщение с этим заголовком уже существует"
+
+#: ../src/Sms/Service/PhoneService.php:34
+msgid "Phone number already exist in this base"
+msgstr "Номер уже существует в этой базе"
+
+#: ../src/Sms/Service/SendService.php:43 ../src/Sms/Service/SendService.php:58
+msgid "Processing. You can't access to that process."
+msgstr "Обработка. Вы не можете получить доступ к этому процессу"
+
+#: ../view/error/404.phtml:1
+msgid "A 404 error occurred"
+msgstr "Ошибка 404"
+
+#: ../view/error/404.phtml:10
+msgid "The requested controller was unable to dispatch the request."
+msgstr "Запрашиваемый контроллер не смог отправить запрос."
+
+#: ../view/error/404.phtml:13
+msgid ""
+"The requested controller could not be mapped to an existing controller class."
+msgstr ""
+"Запрашиваемый контроллер не может быть сопоставлен с существующими классом "
+"контроллера."
+
+#: ../view/error/404.phtml:16
+msgid "The requested controller was not dispatchable."
+msgstr "Запрашиваемый контроллер не доступен."
+
+#: ../view/error/404.phtml:19
+msgid "The requested URL could not be matched by routing."
+msgstr "Для запрашиваемого URL не может быть достигнуто направление."
+
+#: ../view/error/404.phtml:22
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr "Мы не можем определить причину создания страницы 404."
+
+#: ../view/error/404.phtml:34
+msgid "Controller"
+msgstr "Контроллер"
+
+#: ../view/error/404.phtml:41
+#, php-format
+msgid "resolves to %s"
+msgstr "разрешает для %s"
+
+#: ../view/error/404.phtml:53 ../view/error/index.phtml:8
+msgid "Additional information"
+msgstr "Дополнительная информация"
+
+#: ../view/error/404.phtml:56 ../view/error/404.phtml:81
+#: ../view/error/index.phtml:11 ../view/error/index.phtml:36
+msgid "File"
+msgstr "Файл"
+
+#: ../view/error/404.phtml:60 ../view/error/404.phtml:85
+#: ../view/error/index.phtml:15 ../view/error/index.phtml:40
+msgid "Message"
+msgstr "Сообщение"
+
+#: ../view/error/404.phtml:64 ../view/error/404.phtml:89
+#: ../view/error/index.phtml:19 ../view/error/index.phtml:44
+msgid "Stack trace"
+msgstr "Развертывание стека"
+
+#: ../view/error/404.phtml:75 ../view/error/index.phtml:30
+msgid "Previous exceptions"
+msgstr "Предыдущие исключения"
+
+#: ../view/error/404.phtml:109 ../view/error/index.phtml:64
+msgid "No Exception available"
+msgstr "Нет имеющихся исключений"
+
+#: ../view/error/index.phtml:1
+msgid "An error occurred"
+msgstr "Произошла ошибка"
+
+#: ../view/sms/admin/edit.phtml:1
+msgid "Edit user"
+msgstr "Редактировать"
+
+#: ../view/sms/admin/edit.phtml:6 ../view/sms/admin/sendlist.phtml:6
+#: ../view/sms/base/add.phtml:7 ../view/sms/base/download.phtml:6
+#: ../view/sms/base/edit.phtml:6 ../view/sms/base/export.phtml:6
+#: ../view/sms/import/import.phtml:6 ../view/sms/msg/add.phtml:7
+#: ../view/sms/msg/edit.phtml:7 ../view/sms/phone/add.phtml:6
+#: ../view/sms/phone/base.phtml:6 ../view/sms/phone/edit.phtml:6
+#: ../view/sms/send/add.phtml:7 ../view/sms/send/edit.phtml:7
+msgid "back"
+msgstr "вернуться"
+
+#: ../view/sms/admin/edit.phtml:13 ../view/sms/admin/sendlist.phtml:12
+msgid "User's email"
+msgstr "Email пользователя"
+
+#: ../view/sms/admin/index.phtml:1
+msgid "User list"
+msgstr "Список пользователей"
+
+#: ../view/sms/admin/index.phtml:19
+msgid "User list is empty"
+msgstr "Список пользователей пуст"
+
+#: ../view/sms/admin/index.phtml:31
+msgid "edit user"
+msgstr "редактировать"
+
+#: ../view/sms/admin/index.phtml:36
+msgid "send list"
+msgstr "список рассылок"
+
+#: ../view/sms/admin/sendlist.phtml:1 ../view/sms/send/index.phtml:1
+msgid "Delivery list"
+msgstr "Список рассылок"
+
+#: ../view/sms/admin/sendlist.phtml:21 ../view/sms/send/index.phtml:11
+msgid "Send list is empty"
+msgstr "Список рассылок пуст"
+
+#: ../view/sms/admin/sendlist.phtml:32 ../view/sms/admin/sendlist.phtml:49
+#: ../view/sms/send/index.phtml:22 ../view/sms/send/index.phtml:39
+msgid "Wait"
+msgstr "Ожидает"
+
+#: ../view/sms/admin/sendlist.phtml:35 ../view/sms/send/index.phtml:25
+msgid "Prepair"
+msgstr "Подготовка"
+
+#: ../view/sms/admin/sendlist.phtml:38 ../view/sms/admin/translate.phtml:5
+#: ../view/sms/send/index.phtml:28
+msgid "Sending"
+msgstr "Рассылка"
+
+#: ../view/sms/admin/sendlist.phtml:41 ../view/sms/send/index.phtml:31
+msgid "Suspended"
+msgstr "Приостановлено"
+
+#: ../view/sms/admin/sendlist.phtml:44 ../view/sms/send/index.phtml:34
+msgid "Complete"
+msgstr "Завершена"
+
+#: ../view/sms/admin/sendlist.phtml:47 ../view/sms/admin/translate.phtml:6
+#: ../view/sms/send/index.phtml:37
+msgid "Error"
+msgstr "Ошибка"
+
+#: ../view/sms/admin/sendlist.phtml:64 ../view/sms/base/download.phtml:30
+#: ../view/sms/base/export.phtml:43
+msgid "download"
+msgstr "загрузить"
+
+#: ../view/sms/admin/sendlist.phtml:69 ../view/sms/base/index.phtml:41
+#: ../view/sms/msg/index.phtml:30 ../view/sms/phone/base.phtml:46
+#: ../view/sms/send/index.phtml:74
+msgid "delete"
+msgstr "удалить"
+
+#: ../view/sms/admin/translate.phtml:2
+msgid "Ready"
+msgstr "Готова"
+
+#: ../view/sms/admin/translate.phtml:4
+msgid "Export"
+msgstr "Экспорт"
+
+#: ../view/sms/base/add.phtml:1 ../view/sms/base/add.phtml:2
+msgid "Add base"
+msgstr "Добавить базу"
+
+#: ../view/sms/base/download.phtml:1
+msgid "Download list"
+msgstr "Список загрузок"
+
+#: ../view/sms/base/download.phtml:15 ../view/sms/base/download.phtml:19
+msgid "Ready to download"
+msgstr "Готов к загрузке"
+
+#: ../view/sms/base/edit.phtml:1
+msgid "Edit base"
+msgstr "Редактировать базу"
+
+#: ../view/sms/base/export.phtml:1
+msgid "Export list"
+msgstr "Список экспорта"
+
+#: ../view/sms/base/export.phtml:11
+msgid "Download list is empty"
+msgstr "Список загрузок пуст"
+
+#: ../view/sms/base/export.phtml:15
+msgid "export"
+msgstr "экспорт"
+
+#: ../view/sms/base/export.phtml:22 ../view/sms/base/export.phtml:30
+msgid "Export process"
+msgstr "Экспортируется"
+
+#: ../view/sms/base/export.phtml:25
+msgid "Export completed"
+msgstr "Экспорт завершен"
+
+#: ../view/sms/base/export.phtml:28 ../view/sms/import/index.phtml:28
+#: ../view/sms/import/index.phtml:66
+msgid "Error of import"
+msgstr "Ошибка импорта"
+
+#: ../view/sms/base/export.phtml:36 ../view/sms/import/index.phtml:36
+msgid "Base - "
+msgstr "База - "
+
+#: ../view/sms/base/index.phtml:1
+msgid "Base list"
+msgstr "Список баз"
+
+#: ../view/sms/base/index.phtml:6
+msgid "add base"
+msgstr "добавить базу"
+
+#: ../view/sms/base/index.phtml:9
+msgid "download base"
+msgstr "загрузить базы"
+
+#: ../view/sms/base/index.phtml:14
+msgid "Base list is empty"
+msgstr "Список баз пуст"
+
+#: ../view/sms/base/index.phtml:27
+msgid "numbers"
+msgstr "номеров"
+
+#: ../view/sms/base/index.phtml:36 ../view/sms/msg/index.phtml:25
+#: ../view/sms/phone/base.phtml:41 ../view/sms/send/index.phtml:67
+msgid "edit"
+msgstr "редактировать"
+
+#: ../view/sms/base/index.phtml:46
+msgid "edit numbers"
+msgstr "редактировать номера"
+
+#: ../view/sms/base/index.phtml:51
+msgid "prepare to download"
+msgstr "подготовить к загрузке"
+
+#: ../view/sms/import/import.phtml:1 ../view/sms/import/index.phtml:1
+msgid "Import list"
+msgstr "Список импорта"
+
+#: ../view/sms/import/index.phtml:6
+msgid "import file"
+msgstr "файл импорта"
+
+#: ../view/sms/import/index.phtml:11
+msgid "Import list is empty"
+msgstr "Список импорта пуст"
+
+#: ../view/sms/import/index.phtml:22 ../view/sms/import/index.phtml:30
+#: ../view/sms/import/index.phtml:60 ../view/sms/import/index.phtml:68
+msgid "Import process"
+msgstr "Импорт"
+
+#: ../view/sms/import/index.phtml:25 ../view/sms/import/index.phtml:63
+msgid "Import completed"
+msgstr "Импорт завершен"
+
+#: ../view/sms/import/index.phtml:43
+msgid "Import date"
+msgstr "Дата импорта"
+
+#: ../view/sms/import/index.phtml:47
+msgid "Imported phones"
+msgstr "Импортировано номеров"
+
+#: ../view/sms/import/index.phtml:51
+msgid "Errors of import"
+msgstr "Ошибка импорта"
+
+#: ../view/sms/import/index.phtml:55
+msgid "Import status"
+msgstr "Статус импорта"
+
+#: ../view/sms/layout/admin.phtml:6 ../view/sms/layout/admin.phtml:80
+#: ../view/sms/layout/guest.phtml:6 ../view/sms/layout/guest.phtml:27
+#: ../view/sms/layout/user.phtml:6 ../view/sms/layout/user.phtml:82
+msgid "SMS service"
+msgstr "СМС Сервис"
+
+#: ../view/sms/layout/admin.phtml:61 ../view/sms/layout/admin.phtml:65
+#: ../view/sms/layout/admin.phtml:70 ../view/sms/layout/user.phtml:61
+#: ../view/sms/layout/user.phtml:65 ../view/sms/layout/user.phtml:70
+msgid "rub"
+msgstr "руб"
+
+#: ../view/sms/layout/admin.phtml:69 ../view/sms/layout/user.phtml:69
+msgid "Credit limit"
+msgstr "Кредитный лимит"
+
+#: ../view/sms/layout/admin.phtml:73
+msgid "User panel"
+msgstr "Панель пользователя"
+
+#: ../view/sms/layout/admin.phtml:74 ../view/sms/layout/user.phtml:76
+msgid "Logout"
+msgstr "Выход"
+
+#: ../view/sms/layout/admin.phtml:89 ../view/sms/layout/user.phtml:91
+msgid "MENU"
+msgstr "Меню"
+
+#: ../view/sms/layout/user.phtml:74
+msgid "Admin panel"
+msgstr "Панель администратора"
+
+#: ../view/sms/msg/add.phtml:1 ../view/sms/msg/add.phtml:2
+msgid "Add message"
+msgstr "Добавить сообщение"
+
+#: ../view/sms/msg/add.phtml:20 ../view/sms/msg/edit.phtml:21
+msgid "Symbols:"
+msgstr "Символов:"
+
+#: ../view/sms/msg/add.phtml:23 ../view/sms/msg/edit.phtml:24
+msgid "Messages:"
+msgstr "Сообщений:"
+
+#: ../view/sms/msg/edit.phtml:1 ../view/sms/msg/edit.phtml:2
+msgid "Edit message"
+msgstr "Редактировать сообщение"
+
+#: ../view/sms/msg/index.phtml:1
+msgid "Message list"
+msgstr "Список сообщений"
+
+#: ../view/sms/msg/index.phtml:6
+msgid "add message"
+msgstr "добавить сообщение"
+
+#: ../view/sms/msg/index.phtml:11
+msgid "Message list is empty"
+msgstr "Список сообщений пуст"
+
+#: ../view/sms/msg/index.phtml:15
+msgid "message"
+msgstr "сообщение"
+
+#: ../view/sms/phone/add.phtml:1
+msgid "Add phone"
+msgstr "Добавить телефон"
+
+#: ../view/sms/phone/add.phtml:9 ../view/sms/phone/base.phtml:9
+msgid "add phone"
+msgstr "добавить номер"
+
+#: ../view/sms/phone/add.phtml:24 ../view/sms/phone/edit.phtml:21
+msgid "Parameters"
+msgstr "Параметры"
+
+#: ../view/sms/phone/base.phtml:1
+msgid "Numbers list"
+msgstr "Список номеров"
+
+#: ../view/sms/phone/base.phtml:25
+msgid "Phone list is empty"
+msgstr "Список номеров пуст"
+
+#: ../view/sms/phone/edit.phtml:1
+msgid "Edit phone"
+msgstr "Редактировать телефон"
+
+#: ../view/sms/send/add.phtml:1
+msgid "Create new delivery"
+msgstr "Создать рассылку"
+
+#: ../view/sms/send/add.phtml:2 ../view/sms/send/index.phtml:6
+msgid "new delivery"
+msgstr "новая рассылка"
+
+#: ../view/sms/send/edit.phtml:1
+msgid "Edit delivery"
+msgstr "Изменить рассылку"
+
+#: ../view/sms/send/edit.phtml:2
+msgid "edit delivery"
+msgstr "изменить рассылку"
+
+#: ../view/sms/send/index.phtml:55
+msgid "Send date"
+msgstr "Дата отправки"
+
+#: ../view/sms/send/index.phtml:59
+msgid "Sended messages"
+msgstr "Отправлено сообщений"
+
+#: ../view/sms/send/index.phtml:81
+msgid "prepare to send"
+msgstr "подготовка к отправке"
+
+#~ msgid ""
+#~ "Start export of base. After finish, you can download base on this page"
+#~ msgstr ""
+#~ "Подготовка к загрузке. После окончания, вы сможете загрузить базу на этой "
+#~ "странице"
+
+#~ msgid "Message successfully updated"
+#~ msgstr "Сообщение успешно обновлено"
+
+#~ msgid "Phone number successfully updated"
+#~ msgstr "Номер успешно обновлен"
+
+#~ msgid "Delivery successfully updated"
+#~ msgstr "Расслыка успешно обновлена"
+
+#~ msgid "Delivery successfully canceled"
+#~ msgstr "Рассылка успешно отменена"
+
+#~ msgid "Exported databases not found"
+#~ msgstr "База не найдена"
+
+#~ msgid "Import error"
+#~ msgstr "Ошибка импорта"
+
+#~ msgid "History not found"
+#~ msgstr "Истрия не найдена"
+
+#~ msgid "You need to create a message"
+#~ msgstr "Вам нужно создать сообщение"
+
+#~ msgid "Delivery list is empty"
+#~ msgstr "Список рассылок пуст"
+
+#~ msgid "File not found"
+#~ msgstr "Файл не найден"
+
+#~ msgid "Error of open file"
+#~ msgstr "Ошибка открытия файла"
+
+#~ msgid "Phone already exist"
+#~ msgstr "Номер телефона уже существует"
+
+#~ msgid "The sending is started"
+#~ msgstr "Рассылка в процессе"
+
+#~ msgid "The sending is completed"
+#~ msgstr "Рассылка завершена"
+
+#~ msgid "Delivery not found"
+#~ msgstr "Рассылка не найдена"
+
+#~ msgid "download report"
+#~ msgstr "загрузить отчет"
+
+#~ msgid "Administration panel - SMS service"
+#~ msgstr "Панель администратора - SMS сервис"
+
+#~ msgid "You need to create a database"
+#~ msgstr "Вам необходимо создать базу"
+
+#~ msgid "Phone number already exist in base"
+#~ msgstr "Номер уже есть в этой базе"
+
+#~ msgid ""
+#~ "Start export of base. After finish, you can download this on download page"
+#~ msgstr ""
+#~ "Подготовка к загрузке. После окончания, вы сможете загрузить базу на этой "
+#~ "странице"
+
+#~ msgid "Error of request"
+#~ msgstr "Ошибка запроса"
+
+#~ msgid "Imports start"
+#~ msgstr "Начало импорта"
+
+#~ msgid "You need to add phone number"
+#~ msgstr "Добавьте телефонные номера"
+
+#~ msgid "Phone successfully deleted"
+#~ msgstr "Телефон успешно удален"
+
+#~ msgid "Message title already exist"
+#~ msgstr "Название сообщения уже существует"
+
+#~ msgid "Import numbers"
+#~ msgstr "Импортировать номера"
+
+#~ msgid "Validating"
+#~ msgstr "Проверяется"
+
+#~ msgid "Filtering"
+#~ msgstr "Фильтруется"
+
+#~ msgid "Base file"
+#~ msgstr "Файл базы"
+
+#~ msgid "Phone not found"
+#~ msgstr "Телефон не найден"
+
+#~ msgid "add number"
+#~ msgstr "добавить номер"
+
+#~ msgid "Preparing to send"
+#~ msgstr "Подготовка к отправке"
+
+#~ msgid "Login - SMS service"
+#~ msgstr "Авторизация - SMS сервис"
+
+#~ msgid "Credit"
+#~ msgstr "Кредитный лимит"
+
+#~ msgid "add"
+#~ msgstr "добавить"
+
+#~ msgid "find"
+#~ msgstr "найти"
+
+#~ msgid "Phone number"
+#~ msgstr "Номер телефона"
+
+#~ msgid "Prepare for send"
+#~ msgstr "Готовится к отправке"
+
+#~ msgid "Client panel - SMS service"
+#~ msgstr "Панель клиента - SMS сервис"
+
+#~ msgid "Skeleton Application"
+#~ msgstr "Skeleton Application"
+
+#~ msgid "Home"
+#~ msgstr "Главная"
+
+#~ msgid "All rights reserved."
+#~ msgstr "Все права защищены."
+
+#~ msgid "Welcome to %sZend Framework 2%s"
+#~ msgstr "Привет, %sZend Framework 2%s"
+
+#~ msgid ""
+#~ "Congratulations! You have successfully installed the %sZF2 Skeleton "
+#~ "Application%s. You are currently running Zend Framework version %s. This "
+#~ "skeleton can serve as a simple starting point for you to begin building "
+#~ "your application on ZF2."
+#~ msgstr ""
+#~ "Поздравляем! Вы успешно установили %sZF2 Skeleton Application%s. У вас "
+#~ "установлен Zend Framework версии %s. Этот каркас может служить простой "
+#~ "отправной точкой, чтобы начать строить приложения на ZF2."
+
+#~ msgid "Fork Zend Framework 2 on GitHub"
+#~ msgstr "Fork Zend Framework 2 на GitHub"
+
+#~ msgid "Follow Development"
+#~ msgstr "Следи за Разработкой"
+
+#~ msgid ""
+#~ "Zend Framework 2 is under active development. If you are interested in "
+#~ "following the development of ZF2, there is a special ZF2 portal on the "
+#~ "official Zend Framework website which provides links to the ZF2 %swiki%s, "
+#~ "%sdev blog%s, %sissue tracker%s, and much more. This is a great resource "
+#~ "for staying up to date with the latest developments!"
+#~ msgstr ""
+#~ "Zend Framework 2 активно развивается. Если вы заинтересованы в его "
+#~ "развитии, для вас есть специальный портал ZF2 на официальном сайте Zend "
+#~ "Framework который дает ссылки на ZF2 %swiki%s, %sdev blog%s, %sissue "
+#~ "tracker%s, и многое другое. Это отличный ресурс для того чтобы быть в "
+#~ "курсе последних событий."
+
+#~ msgid "ZF2 Development Portal"
+#~ msgstr "ZF2 Портал Разработчика"
+
+#~ msgid "Discover Modules"
+#~ msgstr "Узнай о Модулях"
+
+#~ msgid ""
+#~ "The community is working on developing a community site to serve as a "
+#~ "repository and gallery for ZF2 modules. The project is available %son "
+#~ "GitHub%s. The site is currently live and currently contains a list of "
+#~ "some of the modules already available for ZF2."
+#~ msgstr ""
+#~ "Сообщество работает над созданием сайта, который служит хранилищем и "
+#~ "галереей для ZF2 модулей. Проект доступен %sна GitHub%s. Сайт в настоящее "
+#~ "время активен и содержит список модулей уже доступных для ZF2."
+
+#~ msgid "Explore ZF2 Modules"
+#~ msgstr "Узнать о ZF2 модулях"
+
+#~ msgid "Help &amp; Support"
+#~ msgstr "Помощь и Поддержка"
+
+#~ msgid ""
+#~ "If you need any help or support while developing with ZF2, you may reach "
+#~ "us via IRC: %s#zftalk on Freenode%s. We'd love to hear any questions or "
+#~ "feedback you may have regarding the beta releases. Alternatively, you may "
+#~ "subscribe and post questions to the %smailing lists%s."
+#~ msgstr ""
+#~ "Если вам нужна помощь или поддержка при разработке с ZF2, вы можете "
+#~ "связаться с нами по IRC: %s#zftalk on Freenode%s. Мы хотели бы узнать "
+#~ "какие вопросы или предложения вы имеете относительно текущей версии. "
+#~ "Кроме того, вы можете задавать вопросы в %smailing lists%s."
+
+#~ msgid "Ping us on IRC"
+#~ msgstr "Присоединяйся к IRC"
+
+#~ msgid "Exception"
+#~ msgstr "Исключение"
