@@ -147,6 +147,14 @@ return array(
             ),
         )
     ),
+    'service_manager' => array(
+        'invokables' => array(
+            'Sms\Authentication\AdapterMemcached' => 'Sms\Authentication\Adapter\Memcached'
+        ),
+        'factories' => array(
+            'Sms\Authentication\Storage\MemcachedStorage' => 'Sms\Authentication\Factory\MemcachedStorageFactory'
+        ),
+    ),
     'controllers' => array(
         'factories' => array(
             'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',

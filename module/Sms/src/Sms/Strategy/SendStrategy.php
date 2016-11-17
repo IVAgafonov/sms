@@ -23,7 +23,7 @@ class SendStrategy implements SendStrategyInterface
         $smsCount = 0;
         $userNaming = $userMapper->getById($userId);
         $sendXmlRequest = '<?xml version="1.0" encoding="utf-8" ?>
-            <package login="'.$this->config['sms-strategy-config']['login'].'" password="'.$this->config['sms-strategy-config']['password'].'">
+            <package login="'.$this->config['send-strategy-config']['login'].'" password="'.$this->config['send-strategy-config']['password'].'">
                 <message>
                     <default sender="'.$userNaming->getNaming().'"/>';
         foreach ($phones as $phone) {
@@ -94,11 +94,11 @@ class SendStrategy implements SendStrategyInterface
     {
         //echo $xmlRequest;
         $curl_options = array(
-            CURLOPT_URL => $this->config['sms-strategy-config']['host'],
+            CURLOPT_URL => $this->config['send-strategy-config']['host'],
             CURLOPT_POST => true,
             CURLOPT_RETURNTRANSFER => false,
             CURLOPT_HEADER => array(
-                'Host: '.$this->config['sms-strategy-config']['host'], 
+                'Host: '.$this->config['send-strategy-config']['host'], 
                 'Content-Type: text/xml; charset=utf-8', 
                 'Content-Length: '.strlen($xmlRequest)
             ),

@@ -56,7 +56,8 @@ $settings = array(
      * Accepted values: array containing services that implement 'ZfcUser\Authentication\Adapter\ChainableAdapter'
      */
     'auth_adapters' => array( 100 => 'ZfcUser\Authentication\Adapter\Db' ),
-
+    //'auth_adapters' => array( 100 => 'Sms\Authentication\AdapterMemcached' ),
+    
     /**
      * Enable Display Name
      *
@@ -76,7 +77,7 @@ $settings = array(
      * Default value: array containing 'email'
      * Accepted values: array containing one or more of: email, username
      */
-    //'auth_identity_fields' => array( 'email' ),
+    'auth_identity_fields' => array( 'email' ),
 
     /**
      * Login form timeout

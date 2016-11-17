@@ -23,7 +23,7 @@ class DebugSendStrategy implements SendStrategyInterface
         $smsCount = 0;
         $userNaming = $userMapper->getById($userId);
         $sendXmlRequest = '<?xml version="1.0" encoding="utf-8" ?>
-            <package login="'.$this->config['sms-strategy-config']['login'].'" password="'.$this->config['sms-strategy-config']['password'].'">
+            <package login="'.$this->config['send-strategy-config']['login'].'" password="'.$this->config['send-strategy-config']['password'].'">
                 <message>
                      <default sender="'.$userNaming->getNaming().'"/>';
         foreach ($phones as $phone) {

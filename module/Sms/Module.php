@@ -21,9 +21,20 @@ class Module
     public function onBootstrap(EventInterface $e)
     {
         $em = $e->getApplication()->getEventManager();
+        $this->sm = $e->getApplication()->getServiceManager();
+        
+        //
+        //$this->sm->get('Sms\Authentication\AdapterMemcached')->setServiceManager($this->sm);
+        $this->sm->get('zfcuser_auth_service')->setStorage(
+            $this->sm->get('Sms\Authentication\Storage\MemcachedStorage')
+        );
+        //$this->sm->get('zfcuser_auth_service')->getStorage()->setServiceManager($this->sm);
+        //$this->sm->get('ZfcUser\Authentication\Storage\Db')->setStorage(
+        //    new \Sms\Authentication\Storage\MemcachedStorage()
+        //);
+        //
         $em->attach(new DefaultRoleListener());
         $userLogginListener = new UserLoginListener();
-        $this->sm = $e->getApplication()->getServiceManager();
         $config = $this->sm->get('Config');
         $userLogginListener->setServiceFactory(new ServiceFactory($config['sms-config']));
         $em->attach($userLogginListener);
