@@ -13,9 +13,8 @@ use Zend\Authentication\Storage;
 use Zend\Crypt\Password\Bcrypt;
 use ZfcUser\Authentication\Adapter\AdapterChainEvent as AuthEvent;
 use ZfcUser\Authentication\Adapter\Db;
-use Sms\Authentication\Storage\MemcachedStorage;
 
-class Memcached extends Db
+class MemcachedAdapter extends Db
 {
     /**
      * Called when user id logged out
@@ -38,6 +37,7 @@ class Memcached extends Db
         $identity   = $e->getRequest()->getPost()->get('identity');
         $credential = $e->getRequest()->getPost()->get('credential');
         $credential = $this->preProcessCredential($credential);
+        
         $userObject = null;
         // Cycle through the configured identity sources and test each
         $fields = $this->getOptions()->getAuthIdentityFields();
@@ -52,6 +52,7 @@ class Memcached extends Db
                     break;
             }
         }
+        
         if (!$userObject) {
             $e->setCode(AuthenticationResult::FAILURE_IDENTITY_NOT_FOUND)
               ->setMessages(array('A record with the supplied identity could not be found.'));
@@ -88,16 +89,12 @@ class Memcached extends Db
         $e->setCode(AuthenticationResult::SUCCESS)
           ->setMessages(array('Authentication successful.'));
     }
-    
     public function getStorage() {
-        if (null === $this->storage) {
-            $this->setStorage(new MemcachedStorage());
-        }
         return $this->storage;
     }
     
     public function setStorage(Storage\StorageInterface $storage) {
-        $this->storage = new MemcachedStorage();
+        $this->storage = $storage;
         return $this->storage;
     }
 }

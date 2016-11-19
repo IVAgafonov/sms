@@ -152,7 +152,8 @@ return array(
             'Sms\Authentication\AdapterMemcached' => 'Sms\Authentication\Adapter\Memcached'
         ),
         'factories' => array(
-            'Sms\Authentication\Storage\MemcachedStorage' => 'Sms\Authentication\Factory\MemcachedStorageFactory'
+            'Sms\Authentication\Storage\MemcachedStorage' => 'Sms\Authentication\Factory\MemcachedStorageFactory',
+            'Sms\Authentication\Adapter\MemcachedAdapter' => 'Sms\Authentication\Factory\MemcachedAdapterFactory'
         ),
     ),
     'controllers' => array(

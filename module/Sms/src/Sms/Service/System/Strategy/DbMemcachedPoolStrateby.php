@@ -5,6 +5,6 @@
  * @licenseGPL
  */
 
-namespace Sms\Authentication\Strategy;
+namespace Sms\Service\System\Strategy;
 
 

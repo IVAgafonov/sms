@@ -10,9 +10,10 @@ namespace Sms\Authentication\Factory;
 
 use Sms\Authentication\Storage\MemcachedStorage;
 use Sms\Authentication\Session\SessionEmulator;
-use Sms\Authentication\Strategy\ConfigMemcachedPoolStrategy;
+use Sms\Service\System\Strategy\ConfigMemcachedPoolStrategy;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+use Sms\Service\System\MemcachedProvider;
 
 class MemcachedStorageFactory implements FactoryInterface
 {
@@ -23,8 +24,10 @@ class MemcachedStorageFactory implements FactoryInterface
         $response = $serviceLocator->get('Response');
         $zcfUzerMapper = $serviceLocator->get('zfcuser_user_mapper');
         $sessionEmulator = new SessionEmulator($response);
-        $pool = new ConfigMemcachedPoolStrategy($config['sms-config']['auth-strategy-config']['pool']);
-        $memcachedStorage = new MemcachedStorage($pool, $sessionEmulator, $zcfUzerMapper);
+        $pool = new ConfigMemcachedPoolStrategy($config, '_');
+        $memcachedProvider = new MemcachedProvider($pool);
+        $memcachedStorage = new MemcachedStorage($memcachedProvider, $sessionEmulator, $zcfUzerMapper);
         return $memcachedStorage;
     }
 }
+

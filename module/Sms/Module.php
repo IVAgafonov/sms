@@ -13,6 +13,9 @@ use Sms\Listener\DefaultRoleListener;
 use Sms\Listener\UserLoginListener;
 use Sms\Listener\LanguageListener;
 use Sms\Factory\Service\ServiceFactory;
+use Sms\Authentication\Session\SessionEmulator;
+use Sms\Service\System\Strategy\ConfigMemcachedPoolStrategy;
+use Sms\Service\System\MemcachedProvider;
 
 class Module
 {
@@ -22,20 +25,42 @@ class Module
     {
         $em = $e->getApplication()->getEventManager();
         $this->sm = $e->getApplication()->getServiceManager();
+        # emulate session
+        $config = $this->sm->get('Config');
+        # get response for sessionEmulator
+        $response = $this->sm->get('Response');
+        $sessionEmulator = new SessionEmulator($response);
+        # get memcached pool and name of instance
+        $pool = new ConfigMemcachedPoolStrategy($config, '_');
+        # create memcached provider
+        $memcachedProvider = new MemcachedProvider($pool);
+        # create new session id if not exists
+        $sessionId = $sessionEmulator->getSessionId();
+        if (!$sessionId) {
+            do {
+                $sessionId = $sessionEmulator->getNewSessionId();
+            } while ($memcachedProvider->get($sessionId));
+            $sessionEmulator->setSessionId($sessionId);
+        }
+        /*
+        $response = $this->sm->get('Response');
+        $sessionEmulator = new SessionEmulator($response);
+
+        $sessionId = $sessionEmulator->getSessionId();
+        if (!$sessionId) {
+            $sessionId = $sessionEmulator->getNewSessionId();
+            $sessionEmulator->setSessionId($sessionId);
+        }
+         * 
+         */
+        # set memcached storage as storage of auth service
+        $memcachedStorage = $this->sm->get('Sms\Authentication\Storage\MemcachedStorage');
+        $this->sm->get('zfcuser_auth_service')->setStorage($memcachedStorage);
         
-        //
-        //$this->sm->get('Sms\Authentication\AdapterMemcached')->setServiceManager($this->sm);
-        $this->sm->get('zfcuser_auth_service')->setStorage(
-            $this->sm->get('Sms\Authentication\Storage\MemcachedStorage')
-        );
-        //$this->sm->get('zfcuser_auth_service')->getStorage()->setServiceManager($this->sm);
-        //$this->sm->get('ZfcUser\Authentication\Storage\Db')->setStorage(
-        //    new \Sms\Authentication\Storage\MemcachedStorage()
-        //);
-        //
+        //$em->attach(new SessionInitListener());
         $em->attach(new DefaultRoleListener());
         $userLogginListener = new UserLoginListener();
-        $config = $this->sm->get('Config');
+        //$config = $this->sm->get('Config');
         $userLogginListener->setServiceFactory(new ServiceFactory($config['sms-config']));
         $em->attach($userLogginListener);
         $em->attach(new LanguageListener());
@@ -44,6 +69,7 @@ class Module
     public function init(\Zend\ModuleManager\ModuleManager $mm)
     {
         $sharedEvents = $mm->getEventManager()->getSharedManager();
+
         $sharedEvents->attach('Sms\Controller\AdminController',
             'dispatch',
             function ($e) {
@@ -80,6 +106,7 @@ class Module
             },
             100
         );
+        
     }
 
     public function getConfig()

@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * @Copyright (C) 2016 Igor Agafonov
  * @licenseGPL
  */
@@ -20,7 +20,13 @@ class SessionEmulator implements SessionEmulatorInterface
     {
         $this->response = $response;
     }
-
+    /**
+     * Create new session id
+     *
+     * @param void
+     * 
+     * @return string
+     */
     public function getNewSessionId()
     {
         $sessionId = "";
@@ -31,13 +37,25 @@ class SessionEmulator implements SessionEmulatorInterface
         }
         return $sessionId;
     }
-
+    /**
+     * Set session id
+     *
+     * @param string
+     * 
+     * @return void
+     */
     public function setSessionId($sessionId)
     {
         $cookie = new SetCookie('emsessionid', $sessionId, time() + 300, '/');
         $this->response->getHeaders()->addHeader($cookie);
     }
-    
+    /**
+     * Get session id
+     *
+     * @param void
+     * 
+     * @return string
+     */
     public function getSessionId()
     {
         if (isset($_COOKIE['emsessionid'])) {
@@ -45,10 +63,17 @@ class SessionEmulator implements SessionEmulatorInterface
         }
         return false;
     }
-    
+    /**
+     * Set session id
+     *
+     * @param string
+     * 
+     * @return void
+     */
     public function deleteSessionId($sessionId)
     {
         $cookie = new SetCookie('emsessionid', $sessionId, 0, '/');
         $this->response->getHeaders()->addHeader($cookie);
     }
 }
+

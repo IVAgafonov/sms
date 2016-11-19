@@ -19,7 +19,7 @@ return array(
         ),
     ),
     'sms-config' => array(
-        'sms-report-email' => 'igoradm90@gmail.com',//can be array
+        'sms-report-email' => 'igoradm90@gmail.com',# can be array
         'sms-max-bases' => 50,
         'sms-max-messages' => 50,
         'sms-csv-path' => __DIR__."/../../module/Sms/data/",
@@ -33,5 +33,11 @@ return array(
             'password' => 'mypwd',
             'host'     => 'mysmsgateway'
         )
+    ),
+    'memcached-instances2' => array(
+        '_' => array( # instance name
+            array('10.10.10.10', 11211, 50), # ip, port, weight
+            array('10.10.10.11', 11211, 50)
+        ),
     )
 );

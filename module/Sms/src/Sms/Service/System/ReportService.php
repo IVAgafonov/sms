@@ -16,7 +16,13 @@ class ReportService implements ReportServiceInterface
     {
         $this->email = $config['sms-report-email'];
     }
-
+    /**
+     * Send report to email
+     *
+     * @param  string $subject
+     * @param  array $array
+     * @return int
+     */
     public function sendReport($subject, $array)
     {
         $report = "Sms report - \r\n";

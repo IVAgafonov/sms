@@ -5,7 +5,7 @@
  * @licenseGPL
  */
 
-namespace Sms\Authentication\Strategy;
+namespace Sms\Service\System\Strategy;
 
 
 interface MemcachedPoolInterface
@@ -18,4 +18,12 @@ interface MemcachedPoolInterface
     * @return array
     */
     public function getPool();
+    /**
+    * Get servers pool name.
+    *
+    * @param void
+    *
+    * @return array
+    */
+    public function getInstance();
 }

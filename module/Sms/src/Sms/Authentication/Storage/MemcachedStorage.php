@@ -9,9 +9,8 @@ namespace Sms\Authentication\Storage;
 
 
 use Zend\Authentication\Storage\StorageInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use ZfcUser\Mapper\UserInterface as UserMapper;
-
+use Sms\Service\System\MemcachedProviderInterface;
+use Sms\Authentication\Session\SessionEmulatorInterface;
 
 class MemcachedStorage implements StorageInterface {
 
@@ -20,24 +19,14 @@ class MemcachedStorage implements StorageInterface {
     protected $resolvedIdentity;
     protected $zfcUserMapper;
     
-    public function __construct($pool, $sessionEmulator, $zcfUzerMapper)
-    {
+    public function __construct(
+        MemcachedProviderInterface $memcachedProvider,
+        SessionEmulatorInterface $sessionEmulator,
+        $zcfUzerMapper
+    ){
+        $this->memcached = $memcachedProvider;
         $this->sessionEmulator = $sessionEmulator;
         $this->zfcUserMapper = $zcfUzerMapper;
-        $this->memcached = new \Memcached('_');
-        if (empty($this->memcached->getServerList())) {
-            $this->memcached->setOption(\Memcached::OPT_RECV_TIMEOUT, 500);
-            $this->memcached->setOption(\Memcached::OPT_SEND_TIMEOUT, 500);
-            $this->memcached->setOption(\Memcached::OPT_TCP_NODELAY, true);
-            $this->memcached->setOption(\Memcached::OPT_SERVER_FAILURE_LIMIT, 50);
-            $this->memcached->setOption(\Memcached::OPT_CONNECT_TIMEOUT, 500);
-            $this->memcached->setOption(\Memcached::OPT_RETRY_TIMEOUT, 250);
-            $this->memcached->setOption(\Memcached::OPT_DISTRIBUTION, \Memcached::DISTRIBUTION_CONSISTENT);
-            $this->memcached->setOption(\Memcached::OPT_REMOVE_FAILED_SERVERS, true);
-            $this->memcached->setOption(\Memcached::OPT_LIBKETAMA_COMPATIBLE, true);
-            $this->memcached->addServers($pool->getPool());
-        }
-        //$this->memcached->addServer("192.168.74.22", "11211");
     }
     /**
      * Check is session is Empty
@@ -63,12 +52,11 @@ class MemcachedStorage implements StorageInterface {
      */
     public function write($contents)
     {
-        $newSessionId = "";
-        do {
-            $newSessionId = $this->sessionEmulator->getNewSessionId();
-        } while ($this->memcached->get($newSessionId));
-        $this->sessionEmulator->setSessionId($newSessionId);
-        $this->memcached->set($newSessionId, $contents,  300);
+        $sessionId = $this->sessionEmulator->getSessionId();
+        if (!$sessionId) {
+            return false;
+        }
+        $this->memcached->set($sessionId, $contents,  300);
     }
     /**
      * Read session data
@@ -108,7 +96,6 @@ class MemcachedStorage implements StorageInterface {
     public function clear()
     {
         $sessionId = $this->sessionEmulator->getSessionId();
-        $this->sessionEmulator->deleteSessionId($sessionId);
         $this->memcached->delete($sessionId);
     }
 }

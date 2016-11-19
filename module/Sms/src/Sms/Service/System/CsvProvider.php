@@ -15,11 +15,11 @@ class CsvProvider implements CsvProviderInterface
     #types
     const EXPORT = 1;
     const IMPORT = 2;
-    
+
     private $dir;
     private $handle;
     private $fileName;
-    
+
     public function __construct($config)
     {
         $this->dir = $config['sms-csv-path'];

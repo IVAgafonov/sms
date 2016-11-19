@@ -55,8 +55,8 @@ $settings = array(
      * Default value: array containing 'ZfcUser\Authentication\Adapter\Db' with priority 100
      * Accepted values: array containing services that implement 'ZfcUser\Authentication\Adapter\ChainableAdapter'
      */
-    'auth_adapters' => array( 100 => 'ZfcUser\Authentication\Adapter\Db' ),
-    //'auth_adapters' => array( 100 => 'Sms\Authentication\AdapterMemcached' ),
+    //'auth_adapters' => array( 100 => 'ZfcUser\Authentication\Adapter\Db' ),
+    'auth_adapters' => array( 100 => 'Sms\Authentication\Adapter\MemcachedAdapter' ),
     
     /**
      * Enable Display Name
